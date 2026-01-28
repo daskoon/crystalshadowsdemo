@@ -140,19 +140,21 @@
     </section>
 
     <!-- Booking Section -->
-    <section id="booking" style="background-color: #0b0b0b; padding: 4rem 1rem; text-align: center;">
+    <section id="booking" style="background-color: #0b0b0b; padding: 4rem 10px; text-align: center;">
       <div class="container">
-        <h2 style="color: #D4AF37; font-family: 'Cinzel', serif; font-size: 2.5rem; margin-bottom: 1rem;">
+        <h2 style="color: #D4AF37; font-family: 'Cinzel', serif; font-size: 2rem; margin-bottom: 1rem;">
           Reserve Your Reading
         </h2>
-        <p style="color: #cccccc; margin-bottom: 2rem; font-style: italic;">
-          "Select a time below. Payment is secured to confirm your appointment."
+        <p style="color: #cccccc; margin-bottom: 2rem; font-style: italic; font-size: 0.9rem;">
+          Select a time below to secure your appointment.
         </p>
       
-        <div style="max-width: 500px; margin: 0 auto; border: 1px solid #D4AF37; border-radius: 4px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.1); overflow: hidden;">
+        <!-- Mobile-Optimized Container -->
+        <div style="max-width: 500px; margin: 0 auto; border: 1px solid #D4AF37; border-radius: 4px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.1); overflow: hidden; background: #0b0b0b;">
+          <!-- Widget: Width 100%, Min-width removed for small phones -->
           <div class="calendly-inline-widget" 
             data-url="https://calendly.com/daskoon/30min" 
-            style="min-width:320px; height:750px; filter: invert(1) hue-rotate(180deg);">
+            style="width: 100%; height: 700px; filter: invert(1) hue-rotate(180deg);">
           </div>
           <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
         </div>
