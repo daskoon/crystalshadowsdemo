@@ -375,7 +375,16 @@ a {
 /* Responsive */
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 2.5rem;
+        display: none;
+    }
+
+    .hero-content h2 {
+        margin-top: 150px;
+        font-size: 1.5rem;
+    }
+    
+    .hero-section {
+        background-position: top center !important;
     }
     
     .services-grid {
