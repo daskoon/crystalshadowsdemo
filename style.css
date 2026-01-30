@@ -377,6 +377,7 @@ a {
     /* 1. FIX THE HEAD CUTOFF */
     .hero-section {
         background-position: top center !important;
+        background-attachment: scroll !important; /* Fixes mobile zoom issue */
     }
 
     /* 2. FIX THE TEXT BLOCKING HER FACE */
