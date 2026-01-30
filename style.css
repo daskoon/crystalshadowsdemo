@@ -374,17 +374,20 @@ a {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* 1. FIX THE HEAD CUTOFF */
+    .hero-section {
+        background-position: top center !important;
+    }
+
+    /* 2. FIX THE TEXT BLOCKING HER FACE */
     .hero-content h1 {
         display: none;
     }
 
+    /* 3. MOVE THE SUBTITLE DOWN */
     .hero-content h2 {
-        margin-top: 150px;
-        font-size: 1.5rem;
-    }
-    
-    .hero-section {
-        background-position: top center !important;
+        margin-top: 60vh; /* Pushes text way down towards the button */
+        font-size: 1.2rem;
     }
     
     .services-grid {
