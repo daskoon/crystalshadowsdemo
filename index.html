@@ -6,6 +6,9 @@
     <title>Crystal Shadows | 30 Years of Insight</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Calendly Badge Widget CSS is not needed for popup text/button, but we need the CSS for the popup itself which comes with the JS usually, but standard implementation suggests: -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
 
@@ -17,7 +20,7 @@
                 <a href="#legacy">Legacy</a>
                 <a href="#offerings">Offerings</a>
                 <a href="#experience">Experience</a>
-                <a href="#booking">Contact</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
@@ -29,7 +32,7 @@
             <h2>30 Years of Insight & Illumination</h2>
             <p style="font-family: 'Cinzel', serif; font-style: italic; font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--accent-gold);">"Never fear shadows, they mean there is light nearby."</p>
             <p>Unveil your path with clarity and grace. A legacy of truth serving individuals, groups, and renowned organizations since 1996.</p>
-            <a href="#offerings" class="btn-gold">Book Your Session</a>
+            <a href="javascript:void(0);" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/daskoon/30min'});return false;" class="btn-gold">Book Your Session</a>
         </div>
     </header>
 
@@ -70,7 +73,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a href="#booking" class="btn-gold">Reserve Now</a>
+                    <a href="javascript:void(0);" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/daskoon/30min'});return false;" class="btn-gold">Reserve Now</a>
                 </div>
 
                 <!-- Group Gatherings -->
@@ -94,7 +97,8 @@
                         </div>
                         <p class="fine-print">* Travel considerations may apply for locations beyond our immediate sanctuary.</p>
                     </div>
-                    <a href="#booking" class="btn-gold">Book a Group</a>
+                    <!-- For groups, maybe just a contact link? Sticking to calendly for now as general booking or maybe mailto -->
+                    <a href="#contact" class="btn-gold">Book a Group</a>
                 </div>
 
                 <!-- Events -->
@@ -111,7 +115,7 @@
                         </ul>
                         <p class="fine-print">Parties & Events: 2-hour minimum required. Travel fees may apply for distant locales.</p>
                     </div>
-                    <a href="#booking" class="btn-gold">Inquire for Events</a>
+                    <a href="#contact" class="btn-gold">Inquire for Events</a>
                 </div>
 
             </div>
@@ -139,31 +143,10 @@
         </div>
     </section>
 
-    <!-- Booking Section -->
-    <section id="booking" style="background-color: #0b0b0b; padding: 4rem 10px; text-align: center;">
-      <div class="container">
-        <h2 style="color: #D4AF37; font-family: 'Cinzel', serif; font-size: 2rem; margin-bottom: 1rem;">
-          Reserve Your Reading
-        </h2>
-        <p style="color: #cccccc; margin-bottom: 2rem; font-style: italic; font-size: 0.9rem;">
-          Select a time below to secure your appointment.
-        </p>
-      
-        <!-- Mobile-Optimized Container -->
-        <div style="max-width: 500px; margin: 0 auto; border: 1px solid #D4AF37; border-radius: 4px; box-shadow: 0 0 15px rgba(212, 175, 55, 0.1); overflow: hidden; background: #0b0b0b;">
-          <!-- Widget: Width 100%, Min-width removed for small phones -->
-          <div class="calendly-inline-widget" 
-            data-url="https://calendly.com/daskoon/30min" 
-            style="width: 100%; height: 700px; filter: invert(1) hue-rotate(180deg);">
-          </div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Footer / Contact -->
+    <footer id="contact" class="footer">
         <div class="container">
+            <h2 style="margin-bottom: 2rem; font-size: 2rem;">Contact</h2>
             <div class="contact-info">
                 (610) 544-5411
             </div>
@@ -177,7 +160,7 @@
             </div>
 
             <div class="social-links">
-                <a href="#">Instagram</a> • <a href="#">Facebook</a> • <a href="#">Email</a>
+                <a href="#">Instagram</a> • <a href="#">Facebook</a> • <a href="mailto:crystal@example.com">Email</a>
             </div>
             
             <p style="margin-top: 3rem; font-size: 0.8rem; color: #555;">&copy; 1996–2026 Crystal Shadows. All Rights Reserved.</p>
