@@ -1,10 +1,10 @@
 /* Global Resets & Typography */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;500;700&display=swap');
 
 :root {
     --bg-primary: #0a0f24;
     --bg-secondary: #000000;
-    --accent-gold: #d4af37;
+    --accent-gold: #FFD700; /* Brighter Gold */
     --accent-teal: #20B2AA;
     --text-light: #f8f9fa;
     --text-muted: #e6e6fa;
@@ -34,8 +34,14 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
+/* Fancier Fonts for Headings */
+h1 {
+    font-family: 'Cinzel Decorative', cursive; /* Extra fancy for main title */
+    color: var(--accent-gold);
+}
+
+h2, h3, h4, .nav-logo {
+    font-family: 'Cinzel', serif; /* Classic fancy for others */
     color: var(--accent-gold);
 }
 
@@ -50,7 +56,7 @@ a {
     background: linear-gradient(135deg, #20B2AA 0%, #008B8B 100%);
     color: #FFFFFF !important;
     padding: 12px 30px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -135,8 +141,9 @@ a {
 }
 
 .hero-content h2 {
-    /* Push everything else DOWN below her chin */
-    margin-top: 550px; 
+    /* Push everything else DOWN below her chin using Viewport Height */
+    /* This scales with the screen height, preventing overlaps on short screens */
+    margin-top: 50vh; 
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
@@ -160,9 +167,7 @@ a {
 }
 
 .nav-logo {
-    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    color: var(--accent-gold);
     font-weight: 700;
     letter-spacing: 2px;
 }
@@ -227,7 +232,7 @@ a {
 }
 
 .testimonial-author {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
     color: var(--accent-gold);
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -345,7 +350,7 @@ a {
 }
 
 .service-price {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
     color: var(--accent-gold);
 }
 
@@ -368,7 +373,7 @@ a {
 .contact-info {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif;
 }
 
 .social-links {
@@ -388,6 +393,13 @@ a {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    /* Tablet/Smaller Laptop Adjustments */
+    .hero-content h2 {
+        margin-top: 45vh; /* Slightly less gap on medium screens if needed */
+    }
+}
+
 @media (max-width: 768px) {
     /* 1. MAKE NAVBAR SMALLER */
     .navbar {
