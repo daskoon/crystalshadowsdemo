@@ -1,5 +1,5 @@
 /* Global Resets & Typography */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;500;700&display=swap');
 
 :root {
     --bg-primary: #0a0f24;
@@ -27,7 +27,7 @@ body {
     background-image: radial-gradient(circle at 50% 50%, #1a2448 0%, #0a0f24 100%);
     color: var(--text-light);
     font-family: 'Lato', sans-serif;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.6;
     overflow-x: hidden;
@@ -35,7 +35,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     color: var(--accent-gold);
 }
 
@@ -48,9 +48,9 @@ a {
 .btn-teal {
     display: inline-block;
     background: linear-gradient(135deg, #20B2AA 0%, #008B8B 100%);
-    color: var(--text-light);
+    color: #FFFFFF !important;
     padding: 12px 30px;
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -95,11 +95,12 @@ a {
 .hero-section {
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Aligns content to the top */
+    padding-top: 15vh; /* Pushes content down slightly from the very top */
     justify-content: center;
     text-align: center;
     /* Standard tint for readability + Image */
-    background: linear-gradient(rgba(10, 15, 36, 0.7), rgba(10, 15, 36, 0.7)), url('newphoto.png');
+    background: linear-gradient(rgba(10, 15, 36, 0.6), rgba(10, 15, 36, 0.6)), url('newphoto.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -150,7 +151,7 @@ a {
 }
 
 .nav-logo {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     color: var(--accent-gold);
     font-weight: 700;
@@ -217,7 +218,7 @@ a {
 }
 
 .testimonial-author {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     color: var(--accent-gold);
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -335,7 +336,7 @@ a {
 }
 
 .service-price {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     color: var(--accent-gold);
 }
 
@@ -358,7 +359,7 @@ a {
 .contact-info {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
 }
 
 .social-links {
@@ -397,16 +398,18 @@ a {
     .hero-section {
         background-position: top center !important;
         background-attachment: scroll !important; /* Fixes mobile zoom issue */
+        padding-top: 80px; /* Moves content high up on mobile */
+        align-items: flex-start;
     }
 
     /* 3. FIX THE TEXT BLOCKING HER FACE */
     .hero-content h1 {
-        display: none;
+        display: none; /* Keep hidden on mobile as per previous 'clear forehead' instruction, but desktop is now higher */
     }
 
     /* 4. MOVE THE SUBTITLE DOWN */
     .hero-content h2 {
-        margin-top: 60vh; /* Pushes text way down towards the button */
+        margin-top: 60vh; /* Keeps the text clear of face on mobile */
         font-size: 1.2rem;
     }
     
