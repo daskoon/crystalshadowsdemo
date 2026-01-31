@@ -346,7 +346,7 @@ a {
 
 .services-carousel {
     display: flex;
-    gap: 40px; /* Increased gap */
+    gap: 20px; /* Reduced gap */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding: 40px 20px; /* Added vertical padding for scale effect */
@@ -365,7 +365,7 @@ a {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
-    padding: 50px; /* More internal breathing room */
+    padding: 40px; /* Reduced internal breathing room slightly */
     border-radius: 12px;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.4s ease, border-color 0.4s ease;
     display: flex;
@@ -374,7 +374,7 @@ a {
     position: relative;
     
     /* Carousel specific sizing */
-    flex: 0 0 450px; /* Wider boxes for better readability */
+    flex: 0 0 360px; /* Narrower boxes to fit 3 in 1200px */
     scroll-snap-align: center;
 }
 
