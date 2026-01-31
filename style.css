@@ -331,10 +331,11 @@ a {
     font-size: 1.2rem;
 }
 
-/* Services Grid */
+/* Services Carousel (Replaces Grid) */
 .services-section {
     padding: 100px 0;
     background-color: var(--bg-primary);
+    overflow: hidden; /* Hide scrollbar mess outside container */
 }
 
 .section-title {
@@ -343,10 +344,18 @@ a {
     margin-bottom: 4rem;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.services-carousel {
+    display: flex;
     gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px; /* Space for scrollbar */
+    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+    scrollbar-width: none; /* Firefox: Hide scrollbar */
+}
+
+.services-carousel::-webkit-scrollbar {
+    display: none; /* Chrome/Safari: Hide scrollbar */
 }
 
 /* Glassmorphism Card */
@@ -360,6 +369,10 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
+    /* Carousel specific sizing */
+    flex: 0 0 350px; /* Fixed width for cards */
+    scroll-snap-align: center; /* Snap to center */
 }
 
 .service-card:hover {
