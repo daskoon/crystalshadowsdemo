@@ -171,7 +171,7 @@ a {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 250px;
+    height: 250px; /* Generous height for a smooth blend */
     background: linear-gradient(to bottom, transparent, #000000);
     pointer-events: none;
     z-index: 1;
@@ -190,6 +190,7 @@ a {
     margin-top: 55vh; 
     font-size: 2rem;
     margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
 }
 
 /* Sticky Navbar */
@@ -199,7 +200,7 @@ a {
     width: 100%;
     padding: 20px 0;
     z-index: 1000;
-    background: rgba(10, 15, 36, 0.85);
+    background: rgba(10, 15, 36, 0.85); /* Slightly darker for better contrast */
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(212, 175, 55, 0.3);
 }
@@ -213,9 +214,9 @@ a {
 .nav-links a {
     color: var(--text-light);
     margin-left: 30px;
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    font-weight: 700;
+    font-family: 'Cinzel', serif; /* Back to Old Font */
+    font-size: 1rem; /* Bigger */
+    font-weight: 700; /* Bolder */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -227,7 +228,7 @@ a {
 /* Legacy Section */
 .legacy-section {
     padding: 120px 0;
-    background-color: #000000;
+    background-color: #000000; /* Pure black to match hero fade */
     text-align: center;
 }
 
@@ -434,15 +435,23 @@ a {
     color: var(--accent-teal);
 }
 
+/* Calendly Popup Dark Mode Override */
+.calendly-overlay .calendly-popup {
+    filter: invert(1) hue-rotate(180deg);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     /* Tablet/Smaller Laptop Adjustments */
     .hero-content h1 {
-        font-size: 6rem;
+        font-size: 5rem; /* Still big, but fits 1024px better */
+        margin-top: 10px; /* Remove extra gap */
     }
+    
     .hero-phone {
-        font-size: 3rem;
+        font-size: 2.5rem; /* Readable but clear of face */
     }
+    
     .hero-content h2 {
         /* This pushes the "30 Years" and buttons down below the face */
         margin-top: 35vh; 
@@ -450,6 +459,7 @@ a {
 }
 
 @media (max-width: 768px) {
+    /* 1. MAKE NAVBAR SMALLER */
     .navbar {
         padding: 10px 0;
     }
@@ -463,24 +473,28 @@ a {
         font-size: 0.75rem;
     }
 
+    /* 2. FIX THE HEAD CUTOFF */
     .hero-section {
         background-position: top center !important;
-        background-attachment: scroll !important;
-        padding-top: 80px;
+        background-attachment: scroll !important; /* Fixes mobile zoom issue */
+        padding-top: 80px; /* Moves content high up on mobile */
         align-items: flex-start;
     }
 
+    /* 3. SHOW TITLE ON MOBILE (Reverting previous hide) */
+    /* She wants the name readable everywhere */
     .hero-content h1 {
         display: block; 
-        font-size: 12vw;
+        font-size: 12vw; /* Scales with screen width to remain huge but not break */
     }
     
     .hero-phone {
-        font-size: 8vw;
+        font-size: 8vw; /* Scales with screen width */
     }
 
+    /* 4. MOVE THE SUBTITLE DOWN */
     .hero-content h2 {
-        margin-top: 25vh;
+        margin-top: 25vh; /* Keeps the text clear of face on mobile */
         font-size: 1.2rem;
     }
     
