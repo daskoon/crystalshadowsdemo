@@ -448,12 +448,17 @@ a {
 
     /* 5. CAROUSEL ONE BOX AT A TIME */
     .service-card {
-        flex: 0 0 85vw; /* 85% of screen width */
+        flex: 0 0 75vw; /* Reduced from 85vw */
         margin: 0 10px;
+        padding: 30px; /* Reduced internal padding for mobile */
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem; /* Slightly smaller heading for mobile */
     }
     
     .services-carousel {
-        padding-left: 5vw; /* Centering padding */
-        padding-right: 5vw;
+        padding-left: 12.5vw; /* Centering adjustment for 75vw cards */
+        padding-right: 12.5vw;
     }
 }

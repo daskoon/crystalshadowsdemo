@@ -144,6 +144,45 @@
                     </div>
                     <a href="javascript:void(0);" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/daskoon/30min'});return false;" class="btn-gold">Reserve Now</a>
                 </div>
+
+                <div class="service-card">
+                    <div>
+                        <h3>Group Gatherings</h3>
+                        <p style="margin-bottom: 1rem; font-style: italic;">Shared wisdom for connected spirits.</p>
+                        <ul>
+                            <li>
+                                <span class="service-item-title">Intimate Groups</span>
+                                <span class="service-price">$30.00 / person</span>
+                            </li>
+                            <li>
+                                <span class="service-item-title">Large Assemblies (15+)</span>
+                                <span class="service-price">$25.00 / person</span>
+                            </li>
+                        </ul>
+                        <div class="host-privilege">
+                            <h4>The Host's Privilege</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Host a Party and get a free reading. (Hosts of gatherings with 5+ guests receive a complimentary private session).</p>
+                        </div>
+                        <p class="fine-print">* Travel considerations may apply for locations beyond our immediate sanctuary.</p>
+                    </div>
+                    <a href="#contact" class="btn-gold">Book a Group</a>
+                </div>
+
+                <div class="service-card">
+                    <div>
+                        <h3>Corporate & Private Events</h3>
+                        <p style="margin-bottom: 1rem; font-style: italic;">Elevate your occasion with a touch of the mystical.</p>
+                        <ul>
+                            <li>
+                                <span class="service-item-title">Event Engagement</span>
+                                <span class="service-price">$125.00 / hour</span>
+                                <span class="service-desc">Professional Tarot Master engagement for galas, country clubs, and functions.</span>
+                            </li>
+                        </ul>
+                        <p class="fine-print">Parties & Events: 2-hour minimum required. Travel fees may apply for distant locales.</p>
+                    </div>
+                    <a href="#contact" class="btn-gold">Inquire for Events</a>
+                </div>
             </div>
         </div>
     </section>
@@ -194,15 +233,28 @@
     </footer>
 
     <script>
-        // Simple Infinite Loop logic
+        // Smooth Infinite Loop logic
         const carousel = document.getElementById('carousel');
+        
+        // Initial scroll to the start of the first set
+        window.addEventListener('load', () => {
+            carousel.scrollTo({ left: 1 });
+        });
+
         carousel.addEventListener('scroll', () => {
-            if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
-                // If at the end, jump back to start (with a slight offset to keep it smooth)
-                carousel.scrollTo({ left: 1, behavior: 'instant' });
-            } else if (carousel.scrollLeft <= 0) {
-                // If at start, jump to near-end
-                carousel.scrollTo({ left: carousel.scrollWidth - carousel.offsetWidth - 1, behavior: 'instant' });
+            const scrollWidth = carousel.scrollWidth;
+            const clientWidth = carousel.offsetWidth;
+            const scrollLeft = carousel.scrollLeft;
+
+            // Halfway point (since we have 2 identical sets)
+            const halfway = (scrollWidth / 2);
+
+            if (scrollLeft >= halfway) {
+                // Jump back to the start of the first set
+                carousel.scrollTo({ left: scrollLeft - halfway, behavior: 'instant' });
+            } else if (scrollLeft <= 0) {
+                // Jump to the start of the second set
+                carousel.scrollTo({ left: halfway, behavior: 'instant' });
             }
         });
     </script>
