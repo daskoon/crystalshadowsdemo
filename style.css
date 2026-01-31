@@ -358,99 +358,29 @@ a {
     display: none; /* Chrome/Safari: Hide scrollbar */
 }
 
-/* Glassmorphism Card */
 .service-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 8px;
-    transition: transform 0.4s ease, background 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.4s ease, z-index 0s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    z-index: 1;
     
     /* Carousel specific sizing */
-    flex: 0 0 350px; /* Fixed width for cards */
+    flex: 0 0 400px; /* Wider cards for desktop */
     scroll-snap-align: center; /* Snap to center */
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid var(--glass-border);
-    padding-bottom: 1rem;
-    display: inline-block;
-}
-
-.service-card ul {
-    list-style: none;
-    margin-bottom: 2rem;
-}
-
-.service-card li {
-    margin-bottom: 1.5rem;
-}
-
-.service-item-title {
-    display: block;
-    font-weight: 700;
-    color: var(--text-light);
-    margin-bottom: 0.25rem;
-}
-
-.service-price {
-    font-family: 'Cormorant Garamond', serif;
-    color: var(--accent-gold);
-    font-weight: 700;
-}
-
-.service-desc {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    font-style: italic;
-    display: block;
-    margin-top: 0.5rem;
-}
-
-/* Footer */
-.footer {
-    background-color: var(--bg-secondary);
-    padding: 60px 0;
-    text-align: center;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.contact-info {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-family: 'Cormorant Garamond', serif;
-}
-
-.social-links {
-    margin-top: 2rem;
-}
-
-.social-links a {
-    color: var(--text-muted);
-    margin: 0 15px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.social-links a:hover {
-    color: var(--accent-teal);
-}
-
-/* Calendly Popup Dark Mode Override */
-.calendly-overlay .calendly-popup {
-    filter: invert(1) hue-rotate(180deg);
+    transform: scale(1.08); /* Become larger */
+    background: rgba(255, 255, 255, 0.12);
+    z-index: 10; /* Pop above others */
+    border-color: var(--accent-gold);
 }
 
 /* Responsive */
@@ -468,6 +398,10 @@ a {
     .hero-content h2 {
         /* This pushes the "30 Years" and buttons down below the face */
         margin-top: 35vh; 
+    }
+
+    .service-card {
+        flex: 0 0 350px;
     }
 }
 
@@ -494,24 +428,30 @@ a {
         align-items: flex-start;
     }
 
-    /* 3. SHOW TITLE ON MOBILE (Reverting previous hide) */
-    /* She wants the name readable everywhere */
+    /* 3. SHOW TITLE ON MOBILE */
     .hero-content h1 {
         display: block; 
-        font-size: 12vw; /* Scales with screen width to remain huge but not break */
+        font-size: 12vw; 
     }
     
     .hero-phone {
-        font-size: 8vw; /* Scales with screen width */
+        font-size: 8vw; 
     }
 
     /* 4. MOVE THE SUBTITLE DOWN */
     .hero-content h2 {
-        margin-top: 25vh; /* Keeps the text clear of face on mobile */
+        margin-top: 25vh;
         font-size: 1.2rem;
     }
+
+    /* 5. CAROUSEL ONE BOX AT A TIME */
+    .service-card {
+        flex: 0 0 85vw; /* 85% of screen width */
+        margin: 0 10px;
+    }
     
-    .services-grid {
-        grid-template-columns: 1fr;
+    .services-carousel {
+        padding-left: 5vw; /* Centering padding */
+        padding-right: 5vw;
     }
 }
