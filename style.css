@@ -38,8 +38,11 @@ body {
 h1 {
     font-family: 'Pinyon Script', cursive; /* Ultra Elegant Script */
     color: var(--accent-gold);
-    font-weight: 400; /* Scripts don't need bold */
+    font-weight: 700; /* Try to bold it */
+    font-size: 5rem; /* Bigger */
     letter-spacing: 2px;
+    margin-top: 30px; /* Bring it down a little bit */
+    text-shadow: 1px 1px 0 #000, 0 0 15px rgba(212, 175, 55, 0.5); /* Enhance visibility/boldness */
 }
 
 /* High-End Serif for Subtitles */
@@ -48,14 +51,23 @@ h2, h3, h4 {
     color: var(--accent-gold);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 3px; /* Adds to the 'expensive' look */
+    letter-spacing: 3px;
+}
+
+.big-number {
+    font-size: 1.8em; /* 1.8x the size of the rest of the line */
+    font-weight: 700;
+    vertical-align: middle;
+    line-height: 1;
+    display: inline-block;
+    transform: translateY(-5px); /* Slight optical adjustment */
 }
 
 .nav-logo {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 2.2rem; /* Needs to be larger for script */
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-family: 'Cinzel', serif; /* Back to Old Font */
+    font-size: 1.8rem; /* Bigger */
+    font-weight: 700; /* Bolder */
+    letter-spacing: 2px;
     color: var(--accent-gold);
 }
 
@@ -170,9 +182,9 @@ a {
     width: 100%;
     padding: 20px 0;
     z-index: 1000;
-    background: rgba(10, 15, 36, 0.8);
+    background: rgba(10, 15, 36, 0.85); /* Slightly darker for better contrast */
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .navbar .container {
@@ -182,15 +194,19 @@ a {
 }
 
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-family: 'Cinzel', serif; /* Back to Old Font */
+    font-size: 1.8rem; /* Bigger */
+    font-weight: 700; /* Bolder */
     letter-spacing: 2px;
+    color: var(--accent-gold);
 }
 
 .nav-links a {
     color: var(--text-light);
     margin-left: 30px;
-    font-size: 0.9rem;
+    font-family: 'Cinzel', serif; /* Back to Old Font */
+    font-size: 1rem; /* Bigger */
+    font-weight: 700; /* Bolder */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
