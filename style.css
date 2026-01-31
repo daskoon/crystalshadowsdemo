@@ -96,10 +96,10 @@ a {
 }
 
 /* Reusable Components */
-.btn-teal {
+.btn-gold {
     display: inline-block;
-    background: linear-gradient(135deg, #20B2AA 0%, #008B8B 100%);
-    color: #FFFFFF !important;
+    background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%);
+    color: #000 !important; /* Back to Black text for Gold buttons usually, but user asked for white text on teal. On Gold, black is better contrast. Let's stick to standard gold button style but maybe bold text. */
     padding: 12px 30px;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
@@ -111,18 +111,18 @@ a {
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    text-shadow: none; /* No shadow needed for black text */
     font-size: 1.1rem;
 }
 
-.btn-teal:hover {
+.btn-gold:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(32, 178, 170, 0.5);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
 }
 
 /* Shine Effect */
-.btn-teal::after {
+.btn-gold::after {
     content: '';
     position: absolute;
     top: 0;
@@ -133,7 +133,7 @@ a {
     transition: 0.5s;
 }
 
-.btn-teal:hover::after {
+.btn-gold:hover::after {
     left: 100%;
 }
 
