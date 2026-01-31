@@ -429,11 +429,23 @@ a {
 /* Responsive */
 @media (max-width: 1024px) {
     /* Tablet/Smaller Laptop Adjustments */
-    .hero-content h1 {
-        font-size: 6rem;
+    .hero-section {
+        padding-top: 80px; /* Pull it up higher */
+        align-items: flex-start;
     }
+    
+    .hero-content h1 {
+        font-size: 5rem; /* Still big, but fits 1024px better */
+        margin-top: 10px; /* Remove extra gap */
+    }
+    
     .hero-phone {
-        font-size: 3rem;
+        font-size: 2.5rem; /* Readable but clear of face */
+    }
+    
+    .hero-content h2 {
+        /* This pushes the "30 Years" and buttons down below the face */
+        margin-top: 40vh; 
     }
 }
 
