@@ -187,7 +187,7 @@ a {
 .hero-content h2 {
     /* Push everything else DOWN below her chin using Viewport Height */
     /* This scales with the screen height, preventing overlaps on short screens */
-    margin-top: 60vh; 
+    margin-top: 55vh; 
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
@@ -437,23 +437,15 @@ a {
 /* Responsive */
 @media (max-width: 1024px) {
     /* Tablet/Smaller Laptop Adjustments */
-    .hero-section {
-        padding-top: 80px; /* Pull it up higher */
-        align-items: flex-start;
-    }
-    
     .hero-content h1 {
-        font-size: 5rem; /* Still big, but fits 1024px better */
-        margin-top: 10px; /* Remove extra gap */
+        font-size: 6rem;
     }
-    
     .hero-phone {
-        font-size: 2.5rem; /* Readable but clear of face */
+        font-size: 3rem;
     }
-    
     .hero-content h2 {
         /* This pushes the "30 Years" and buttons down below the face */
-        margin-top: 40vh; 
+        margin-top: 35vh; 
     }
 }
 
@@ -488,7 +480,7 @@ a {
     }
 
     .hero-content h2 {
-        margin-top: 30vh;
+        margin-top: 25vh;
         font-size: 1.2rem;
     }
     
