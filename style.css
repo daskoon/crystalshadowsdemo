@@ -489,6 +489,32 @@ a {
     .service-card h3 {
         font-size: 1.3rem; /* Slightly smaller heading for mobile */
     }
+
+    .service-card ul {
+        margin-top: 1rem;
+    }
+
+    .service-card li {
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .service-item-title {
+        font-size: 1.1rem;
+    }
+
+    .service-price {
+        font-size: 1.3rem;
+    }
+
+    .service-desc {
+        font-size: 0.95rem;
+    }
+
+    .host-privilege {
+        margin-top: 1.5rem;
+        padding: 15px;
+    }
     
     .services-carousel {
         padding-left: 12.5vw; /* Centering adjustment for 75vw cards */
