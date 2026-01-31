@@ -385,6 +385,39 @@ a {
     border-color: var(--accent-gold);
 }
 
+.service-card ul {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.service-card li {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    padding-bottom: 1rem;
+}
+
+.service-item-title {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    margin-bottom: 0.2rem;
+}
+
+.service-price {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.service-desc {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    line-height: 1.4;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     /* Tablet/Smaller Laptop Adjustments */
