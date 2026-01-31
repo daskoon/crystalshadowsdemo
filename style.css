@@ -179,7 +179,9 @@ a {
 }
 
 .hero-content h2 {
-    margin-top: 45vh; 
+    /* Push everything else DOWN below her chin using Viewport Height */
+    /* This scales with the screen height, preventing overlaps on short screens */
+    margin-top: 60vh; 
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
