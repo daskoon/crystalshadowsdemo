@@ -1,5 +1,5 @@
 /* Global Resets & Typography */
-@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Pinyon+Script&family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;500;700&display=swap');
 
 :root {
     --bg-primary: #0a0f24;
@@ -34,15 +34,34 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* Fancier Fonts for Headings */
+/* MASSIVE Title for "Across the room" readability */
 h1 {
-    font-family: 'Pinyon Script', cursive; /* Ultra Elegant Script */
+    font-family: 'Pinyon Script', cursive;
     color: var(--accent-gold);
-    font-weight: 700; /* Try to bold it */
-    font-size: 5rem; /* Bigger */
+    font-weight: 700; 
+    font-size: 8rem; /* Extremely large */
     letter-spacing: 2px;
-    margin-top: 30px; /* Bring it down a little bit */
-    text-shadow: 1px 1px 0 #000, 0 0 15px rgba(212, 175, 55, 0.5); /* Enhance visibility/boldness */
+    margin-top: 40px;
+    text-shadow: 2px 2px 0 #000, 0 0 20px rgba(0,0,0,0.8);
+    line-height: 1;
+}
+
+/* MASSIVE Phone Number in Gold */
+.hero-phone {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 4rem; /* Massive */
+    font-weight: 700;
+    color: var(--accent-gold) !important;
+    text-shadow: 2px 2px 0 #000, 0 0 15px rgba(0,0,0,0.8);
+    margin: 10px 0 0 0;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.hero-phone:hover {
+    color: #fff !important;
+    text-shadow: 0 0 20px var(--accent-gold);
 }
 
 /* High-End Serif for Subtitles */
@@ -55,18 +74,18 @@ h2, h3, h4 {
 }
 
 .big-number {
-    font-size: 1.8em; /* 1.8x the size of the rest of the line */
+    font-size: 1.8em;
     font-weight: 700;
     vertical-align: middle;
     line-height: 1;
     display: inline-block;
-    transform: translateY(-5px); /* Slight optical adjustment */
+    transform: translateY(-5px);
 }
 
 .nav-logo {
-    font-family: 'Cinzel', serif; /* Back to Old Font */
-    font-size: 1.8rem; /* Bigger */
-    font-weight: 700; /* Bolder */
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
     letter-spacing: 2px;
     color: var(--accent-gold);
 }
@@ -82,7 +101,7 @@ a {
     background: linear-gradient(135deg, #20B2AA 0%, #008B8B 100%);
     color: #FFFFFF !important;
     padding: 12px 30px;
-    font-family: 'Cormorant Garamond', serif; /* Matching the headings */
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -128,11 +147,10 @@ a {
 .hero-section {
     height: 100vh;
     display: flex;
-    align-items: flex-start; /* Aligns content to the top */
-    padding-top: 100px; /* Pushes Title down just enough to clear Navbar */
+    align-items: flex-start;
+    padding-top: 100px;
     justify-content: center;
     text-align: center;
-    /* Standard tint for readability + Image */
     background: linear-gradient(rgba(10, 15, 36, 0.6), rgba(10, 15, 36, 0.6)), url('newphoto.png');
     background-size: cover;
     background-position: center;
@@ -147,7 +165,7 @@ a {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 250px; /* Generous height for a smooth blend */
+    height: 250px;
     background: linear-gradient(to bottom, transparent, #000000);
     pointer-events: none;
     z-index: 1;
@@ -157,20 +175,11 @@ a {
 .hero-content {
     position: relative;
     z-index: 2;
-    width: 100%; /* Ensure full width for centering */
-}
-
-.hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 0; /* Remove bottom margin, we control gap with h2 */
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    line-height: 1.1;
+    width: 100%;
 }
 
 .hero-content h2 {
-    /* Push everything else DOWN below her chin using Viewport Height */
-    /* This scales with the screen height, preventing overlaps on short screens */
-    margin-top: 50vh; 
+    margin-top: 45vh; 
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
@@ -182,7 +191,7 @@ a {
     width: 100%;
     padding: 20px 0;
     z-index: 1000;
-    background: rgba(10, 15, 36, 0.85); /* Slightly darker for better contrast */
+    background: rgba(10, 15, 36, 0.85);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(212, 175, 55, 0.3);
 }
@@ -193,20 +202,12 @@ a {
     align-items: center;
 }
 
-.nav-logo {
-    font-family: 'Cinzel', serif; /* Back to Old Font */
-    font-size: 1.8rem; /* Bigger */
-    font-weight: 700; /* Bolder */
-    letter-spacing: 2px;
-    color: var(--accent-gold);
-}
-
 .nav-links a {
     color: var(--text-light);
     margin-left: 30px;
-    font-family: 'Cinzel', serif; /* Back to Old Font */
-    font-size: 1rem; /* Bigger */
-    font-weight: 700; /* Bolder */
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -218,7 +219,7 @@ a {
 /* Legacy Section */
 .legacy-section {
     padding: 120px 0;
-    background-color: #000000; /* Pure black to match hero fade */
+    background-color: #000000;
     text-align: center;
 }
 
@@ -428,13 +429,15 @@ a {
 /* Responsive */
 @media (max-width: 1024px) {
     /* Tablet/Smaller Laptop Adjustments */
-    .hero-content h2 {
-        margin-top: 45vh; /* Slightly less gap on medium screens if needed */
+    .hero-content h1 {
+        font-size: 6rem;
+    }
+    .hero-phone {
+        font-size: 3rem;
     }
 }
 
 @media (max-width: 768px) {
-    /* 1. MAKE NAVBAR SMALLER */
     .navbar {
         padding: 10px 0;
     }
@@ -448,22 +451,24 @@ a {
         font-size: 0.75rem;
     }
 
-    /* 2. FIX THE HEAD CUTOFF */
     .hero-section {
         background-position: top center !important;
-        background-attachment: scroll !important; /* Fixes mobile zoom issue */
-        padding-top: 80px; /* Moves content high up on mobile */
+        background-attachment: scroll !important;
+        padding-top: 80px;
         align-items: flex-start;
     }
 
-    /* 3. FIX THE TEXT BLOCKING HER FACE */
     .hero-content h1 {
-        display: none; /* Keep hidden on mobile as per previous 'clear forehead' instruction, but desktop is now higher */
+        display: block; 
+        font-size: 12vw;
+    }
+    
+    .hero-phone {
+        font-size: 8vw;
     }
 
-    /* 4. MOVE THE SUBTITLE DOWN */
     .hero-content h2 {
-        margin-top: 60vh; /* Keeps the text clear of face on mobile */
+        margin-top: 30vh;
         font-size: 1.2rem;
     }
     
