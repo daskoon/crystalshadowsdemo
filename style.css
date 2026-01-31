@@ -147,11 +147,17 @@ a {
 .hero-section {
     height: 100vh;
     display: flex;
-    align-items: flex-start;
-    padding-top: 100px;
+    align-items: flex-start; /* Aligns content to the top */
+    padding-top: 100px; /* Pushes Title down just enough to clear Navbar */
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(10, 15, 36, 0.6), rgba(10, 15, 36, 0.6)), url('newphoto.png');
+    /* Gradient: Darker top (for title), Clear middle (for face), Dark bottom (for subtitle) */
+    background: linear-gradient(to bottom, 
+        rgba(10, 15, 36, 0.5) 0%, 
+        rgba(10, 15, 36, 0.1) 35%, 
+        rgba(10, 15, 36, 0.1) 50%, 
+        rgba(10, 15, 36, 0.9) 100%), 
+        url('newphoto.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
