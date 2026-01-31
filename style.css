@@ -27,8 +27,8 @@ body {
     background-image: radial-gradient(circle at 50% 50%, #1a2448 0%, #0a0f24 100%);
     color: var(--text-light);
     font-family: 'Lato', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.4rem; /* Bumped up from 1.2rem */
+    font-weight: 700; /* Bold everywhere */
     line-height: 1.6;
     overflow-x: hidden;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
