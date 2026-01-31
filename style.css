@@ -335,7 +335,7 @@ a {
 .services-section {
     padding: 100px 0;
     background-color: var(--bg-primary);
-    overflow: hidden; /* Hide scrollbar mess outside container */
+    /* Removed overflow: hidden to prevent clipping of scaled cards */
 }
 
 .section-title {
@@ -346,34 +346,36 @@ a {
 
 .services-carousel {
     display: flex;
-    gap: 30px;
+    gap: 40px; /* Increased gap */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding-bottom: 20px; /* Space for scrollbar */
-    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
-    scrollbar-width: none; /* Firefox: Hide scrollbar */
+    padding: 40px 20px; /* Added vertical padding for scale effect */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-width: 1400px; /* Wider framing */
+    margin: 0 auto;
 }
 
 .services-carousel::-webkit-scrollbar {
-    display: none; /* Chrome/Safari: Hide scrollbar */
+    display: none;
 }
 
+/* Glassmorphism Card */
 .service-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
-    padding: 40px;
-    border-radius: 8px;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.4s ease, z-index 0s;
+    padding: 50px; /* More internal breathing room */
+    border-radius: 12px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.4s ease, border-color 0.4s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    z-index: 1;
     
     /* Carousel specific sizing */
-    flex: 0 0 400px; /* Wider cards for desktop */
-    scroll-snap-align: center; /* Snap to center */
+    flex: 0 0 450px; /* Wider boxes for better readability */
+    scroll-snap-align: center;
 }
 
 .service-card:hover {
