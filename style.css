@@ -557,3 +557,5 @@ a {
         padding-right: 12.5vw;
     }
 }
+.social-links { text-align: center; margin-top: 2rem; }
+.contact-info { text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Cinzel', serif; color: var(--text-light); }
