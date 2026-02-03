@@ -425,6 +425,22 @@ a {
     text-align: center; /* Explicitly center */
 }
 
+.contact-info {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Cinzel', serif;
+    text-align: center; /* Explicitly center */
+    color: var(--text-light);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--bg-secondary);
+    padding: 60px 0;
+    text-align: center; /* This should center inline content */
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     /* Tablet/Smaller Laptop Adjustments */
