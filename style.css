@@ -186,8 +186,8 @@ a {
 }
 
 .hero-content h2 {
-    /* Adjusted UP to clear overlap with the quote below */
-    margin-top: 50vh; 
+    /* Adjusted UP to move the entire text block and button higher on the screen */
+    margin-top: 43vh; 
     font-size: 2.2rem;
     color: var(--text-light); 
     margin-bottom: 2.5rem; /* Increased margin for better separation */
