@@ -420,6 +420,11 @@ a {
     line-height: 1.4;
 }
 
+.social-links {
+    margin-top: 2rem;
+    text-align: center; /* Explicitly center */
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     /* Tablet/Smaller Laptop Adjustments */
