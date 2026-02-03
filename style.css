@@ -4,12 +4,12 @@
 :root {
     --bg-primary: #0a0f24;
     --bg-secondary: #000000;
-    --accent-gold: #FFD700; /* Brighter Gold */
-    --accent-teal: #20B2AA;
+    --accent-teal: #20B2AA; /* Primary Accent */
+    --accent-teal-bright: #40E0D0; /* Brighter variant for gradients/hovers */
     --text-light: #f8f9fa;
     --text-muted: #e6e6fa;
     --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(212, 175, 55, 0.3);
+    --glass-border: rgba(32, 178, 170, 0.3); /* Teal border */
 }
 
 * {
@@ -46,13 +46,13 @@ h1 {
     line-height: 1.2;
 }
 
-/* MASSIVE Phone Number - Toned down gold to white */
+/* MASSIVE Phone Number - Now Teal */
 .hero-phone {
     display: block;
     font-family: 'Cinzel', serif;
     font-size: 4rem; /* Massive */
     font-weight: 700;
-    color: var(--text-light) !important;
+    color: var(--accent-teal) !important;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
     margin: 10px 0 0 0;
     letter-spacing: 3px;
@@ -60,8 +60,8 @@ h1 {
 }
 
 .hero-phone:hover {
-    color: #fff !important;
-    text-shadow: 0 0 20px var(--accent-gold);
+    color: var(--accent-teal-bright) !important;
+    text-shadow: 0 0 20px var(--accent-teal);
 }
 
 /* Updated headers to Teal and better line-height */
@@ -88,7 +88,7 @@ h2, h3, h4 {
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 2px;
-    color: var(--accent-gold);
+    color: var(--accent-teal);
 }
 
 a {
@@ -96,11 +96,11 @@ a {
     transition: color 0.3s ease;
 }
 
-/* Reusable Components */
-.btn-gold {
+/* Reusable Components - Renamed to Teal */
+.btn-teal {
     display: inline-block;
-    background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%);
-    color: #000 !important; /* Back to Black text for Gold buttons usually, but user asked for white text on teal. On Gold, black is better contrast. Let's stick to standard gold button style but maybe bold text. */
+    background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-teal-bright) 100%);
+    color: #fff !important; 
     padding: 12px 30px;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
@@ -112,18 +112,18 @@ a {
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-    text-shadow: none; /* No shadow needed for black text */
+    box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     font-size: 1.1rem;
 }
 
-.btn-gold:hover {
+.btn-teal:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 6px 20px rgba(32, 178, 170, 0.5);
 }
 
 /* Shine Effect */
-.btn-gold::after {
+.btn-teal::after {
     content: '';
     position: absolute;
     top: 0;
@@ -134,7 +134,7 @@ a {
     transition: 0.5s;
 }
 
-.btn-gold:hover::after {
+.btn-teal:hover::after {
     left: 100%;
 }
 
@@ -261,7 +261,7 @@ a {
 
 .testimonial-card {
     padding: 30px;
-    border-left: 2px solid var(--accent-gold);
+    border-left: 2px solid var(--accent-teal);
     background: rgba(255, 255, 255, 0.02);
     text-align: left;
 }
@@ -275,7 +275,7 @@ a {
 
 .testimonial-author {
     font-family: 'Cormorant Garamond', serif;
-    color: var(--accent-gold);
+    color: var(--accent-teal);
     font-size: 0.9rem;
     text-transform: uppercase;
     font-weight: 700;
@@ -285,7 +285,7 @@ a {
 .host-privilege {
     margin-top: 3rem;
     padding: 20px;
-    border: 1px dashed var(--accent-gold);
+    border: 1px dashed var(--accent-teal);
     border-radius: 8px;
     background: rgba(212, 175, 55, 0.05);
 }
@@ -328,7 +328,7 @@ a {
 }
 
 .payment-item i {
-    color: var(--accent-gold);
+    color: var(--accent-teal);
     font-size: 1.2rem;
 }
 
@@ -383,7 +383,7 @@ a {
     transform: scale(1.08); /* Become larger */
     background: rgba(255, 255, 255, 0.12);
     z-index: 10; /* Pop above others */
-    border-color: var(--accent-gold);
+    border-color: var(--accent-teal);
 }
 
 .service-card ul {
@@ -400,7 +400,7 @@ a {
 .service-item-title {
     display: block;
     font-size: 1.4rem;
-    color: var(--accent-gold);
+    color: var(--accent-teal);
     margin-bottom: 0.2rem;
 }
 
