@@ -442,6 +442,31 @@ a {
 }
 
 /* Responsive */
+@media (max-height: 750px) {
+    .hero-section {
+        padding-top: 80px; /* Reduce top padding */
+    }
+    
+    h1 {
+        font-size: 4rem; /* Shrink title significantly */
+        margin-top: 10px;
+    }
+    
+    .hero-phone {
+        font-size: 2rem; /* Shrink phone number */
+    }
+    
+    .hero-content h2 {
+        margin-top: 25vh; /* Less push-down on short screens */
+        font-size: 1.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+}
+
 @media (max-width: 1024px) {
     /* Tablet/Smaller Laptop Adjustments */
     .hero-content h1 {
