@@ -2,21 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Pinyon+Script&family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;500;700&display=swap');
 
 :root {
-    /* Color Tokens - Agency Specialist Redesign */
+    /* Color Tokens - User Specified Branding */
     --clr-bg-main: #0a0e1a;
     --clr-bg-darker: #000000;
-    --clr-brand-purple: #4a347f; /* Refined Brand Purple */
-    --clr-brand-purple-light: #6a4ea1;
-    --clr-brand-teal: #5196b4; /* Refined Brand Blue */
-    --clr-brand-teal-bright: #7dc2e3;
-    --clr-text-main: #f8f9fa;
-    --clr-text-dim: #dcd6f7;
+    --clr-brand-purple: #643B9F; /* User Specified Purple */
+    --clr-brand-purple-light: #855cc4;
+    --clr-brand-teal: #A5BDC4; /* User Specified Font Color */
+    --clr-brand-teal-bright: #c4d9e0;
+    --clr-text-main: #A5BDC4; /* User Specified Font Color */
+    --clr-text-dim: #cbd8dd;
     
     /* Semantic Tokens */
     --accent: var(--clr-brand-teal);
     --accent-hover: var(--clr-brand-teal-bright);
-    --glass-fill: rgba(74, 52, 127, 0.15);
-    --glass-stroke: rgba(81, 150, 180, 0.3);
+    --glass-fill: rgba(100, 59, 159, 0.15);
+    --glass-stroke: rgba(165, 189, 196, 0.3);
 
     /* Spacing Tokens (8px system) */
     --space-1: 0.25rem; /* 4px */
@@ -117,7 +117,7 @@ body {
     justify-content: center;
     position: relative;
     padding: var(--space-16) 0;
-    background-image: url('hero_circle.webp');
+    background-image: url('circlelogo transparent.png');
     background-size: 65vh;
     background-position: center;
     background-repeat: no-repeat;
