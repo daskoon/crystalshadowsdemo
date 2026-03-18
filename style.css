@@ -93,13 +93,14 @@ body {
     align-items: center;
 }
 
-.nav-logo h1 {
+.nav-logo-text {
     font-family: 'Cinzel', serif;
     font-size: 1.5rem;
     color: var(--accent);
     letter-spacing: 2px;
     margin: 0;
     line-height: 1;
+    font-weight: 700;
 }
 
 .nav-links {
@@ -201,14 +202,16 @@ body {
 }
 
 .hero-phone-huge {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: clamp(1.8rem, 6vw, 3.5rem);
-    color: var(--clr-brand-purple-light);
-    text-decoration: none;
     display: block;
-    margin-bottom: var(--space-6);
-    letter-spacing: 2px;
-    transition: var(--transition-fast);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 10vw, 6rem);
+    color: var(--clr-text-main); /* High contrast user-specified font color */
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: var(--space-4);
+    text-shadow: 0 0 20px rgba(165, 189, 196, 0.4), 2px 2px 4px #000;
+    transition: var(--transition-base);
 }
 
 .hero-phone-huge:hover {
