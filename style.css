@@ -45,7 +45,7 @@ html {
 
 body {
     background-color: var(--clr-bg-main);
-    background-image: radial-gradient(circle at 50% 50%, #170d2b 0%, var(--clr-bg-main) 100%);
+    background-image: radial-gradient(circle at 50% 50%, #2e1b4b 0%, var(--clr-bg-main) 100%);
     color: var(--clr-text-main);
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.1rem, 0.8rem + 1vw, 1.3rem);
@@ -53,6 +53,18 @@ body {
     line-height: 1.7;
     overflow-x: hidden;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 .container {
@@ -64,6 +76,7 @@ body {
 /* Nav Bar */
 .navbar {
     background: rgba(10, 14, 26, 0.85);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--glass-stroke);
     padding: var(--space-4) 0;
@@ -117,11 +130,22 @@ body {
     justify-content: center;
     position: relative;
     padding: var(--space-16) 0;
-    background-image: url('circlelogo transparent.png');
-    background-size: 65vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.hero-logo-img {
+    display: block;
+    width: 100%;
+    max-width: 65vh;
+    height: auto;
+    margin: 0 auto var(--space-8);
+    filter: drop-shadow(0 0 30px rgba(100, 59, 159, 0.5));
+    animation: fadeInScale 1.5s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .hero-section::before {
@@ -139,13 +163,13 @@ body {
     max-width: 850px;
 }
 
-.hero-content h1 {
-    font-family: 'Pinyon Script', cursive;
-    font-size: clamp(4rem, 15vw, 8.5rem);
-    color: var(--clr-brand-teal);
-    text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(74, 52, 127, 0.4);
-    line-height: 0.9;
-    margin-bottom: var(--space-2);
+.hero-text-content {
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-content h2 {
@@ -211,6 +235,7 @@ body {
 
 .service-card {
     background: var(--glass-fill);
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border: 1px solid var(--glass-stroke);
     border-radius: 12px;
@@ -261,6 +286,19 @@ footer {
     margin-top: var(--space-8);
     font-size: 0.9rem;
     color: var(--clr-text-dim);
+}
+
+/* Visually hidden for accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 /* Mobile Responsive */
