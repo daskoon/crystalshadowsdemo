@@ -2,14 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Pinyon+Script&family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;500;700&display=swap');
 
 :root {
-    --bg-primary: #0a0f24;
+    --bg-primary: #0a0e1a;
+    /* Very dark blue-black */
     --bg-secondary: #000000;
-    --accent-teal: #20B2AA; /* Primary Accent */
-    --accent-teal-bright: #40E0D0; /* Brighter variant for gradients/hovers */
+    --accent-purple: #4a337e;
+    /* Extracted from logo */
+    --accent-purple-light: #6a4ea1;
+    --accent-teal: #5b9bb8;
+    /* Extracted from logo circle */
+    --accent-teal-bright: #7dc2e3;
     --text-light: #f8f9fa;
-    --text-muted: #e6e6fa;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(32, 178, 170, 0.3); /* Teal border */
+    --text-muted: #dcd6f7;
+    --glass-bg: rgba(74, 51, 126, 0.1);
+    /* Purple tint glass */
+    --glass-border: rgba(91, 155, 184, 0.3);
+    /* Teal border */
 }
 
 * {
@@ -26,13 +33,12 @@ html {
 
 body {
     background-color: var(--bg-primary);
-    background-image: radial-gradient(circle at 50% 50%, #1a2448 0%, #0a0f24 100%);
+    background-image: radial-gradient(circle at 50% 50%, #1e1435 0%, #0a0e1a 100%);
     color: var(--text-light);
-    font-family: 'Cormorant Garamond', serif; /* Fancier Serif for body text */
-    /* Fluid body text: scales between 1.1rem and 1.6rem */
+    font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.1rem, 0.8rem + 1vw, 1.6rem);
-    font-weight: 500; /* Toned down from 700 for better readability with serif */
-    line-height: 1.7; /* Increased for better breathing room */
+    font-weight: 500;
+    line-height: 1.7;
     overflow-x: hidden;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
@@ -41,12 +47,12 @@ body {
 h1 {
     font-family: 'Pinyon Script', cursive;
     color: var(--accent-teal);
-    font-weight: 700; 
+    font-weight: 700;
     /* Fluid h1: Use vmin to respect both width and height */
     font-size: clamp(3rem, 10vmin, 8rem);
     letter-spacing: 2px;
     margin-top: clamp(10px, 2vh, 40px);
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     line-height: 1.1;
 }
 
@@ -58,15 +64,17 @@ h1 {
     font-size: clamp(1.5rem, 6vmin, 4rem);
     font-weight: 700;
     color: var(--accent-teal) !important;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     margin: 5px 0 0 0;
     letter-spacing: 2px;
     text-decoration: none;
 }
 
 /* Updated headers to Teal and better line-height */
-h2, h3, h4 {
-    font-family: 'Cormorant Garamond', serif; 
+h2,
+h3,
+h4 {
+    font-family: 'Cinzel', serif;
     color: var(--accent-teal);
     font-weight: 700;
     text-transform: uppercase;
@@ -96,46 +104,31 @@ a {
     transition: color 0.3s ease;
 }
 
-/* Reusable Components - Renamed to Teal */
+/* Reusable Components - Renamed to Purple/Teal */
 .btn-teal {
     display: inline-block;
-    background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-teal-bright) 100%);
-    color: #fff !important; 
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-teal) 100%);
+    color: #fff !important;
     padding: clamp(8px, 1.5vh, 12px) clamp(20px, 3vw, 30px);
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cinzel', serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    border: none;
-    border-radius: 2px;
+    border: 1px solid var(--accent-teal);
+    border-radius: 4px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    font-size: clamp(0.9rem, 1vw + 0.2rem, 1.1rem);
+    box-shadow: 0 4px 15px rgba(74, 51, 126, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: clamp(0.8rem, 1vw + 0.1rem, 1rem);
 }
 
 .btn-teal:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(32, 178, 170, 0.5);
-}
-
-/* Shine Effect */
-.btn-teal::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: 0.5s;
-}
-
-.btn-teal:hover::after {
-    left: 100%;
+    box-shadow: 0 6px 20px rgba(91, 155, 184, 0.6);
+    background: linear-gradient(135deg, var(--accent-purple-light) 0%, var(--accent-teal-bright) 100%);
 }
 
 .container {
@@ -149,22 +142,31 @@ a {
 .hero-section {
     height: 100vh;
     display: flex;
-    align-items: flex-start; /* Aligns content to the top */
-    /* Fluid top padding: clears navbar */
+    align-items: center;
     padding-top: clamp(70px, 10vh, 140px);
     justify-content: center;
     text-align: center;
-    /* Gradient: Reduced opacity to make photo brighter (0.3/0.7 instead of 0.5/0.9) */
-    background: linear-gradient(to bottom, 
-        rgba(10, 15, 36, 0.3) 0%, 
-        rgba(10, 15, 36, 0) 35%, 
-        rgba(10, 15, 36, 0) 60%, 
-        rgba(10, 15, 36, 0.7) 100%), 
-        url('newphoto.webp');
-    background-size: cover;
+    background: linear-gradient(to bottom,
+            rgba(10, 14, 26, 0.6) 0%,
+            rgba(10, 14, 26, 0.2) 50%,
+            rgba(10, 14, 26, 0.8) 100%),
+        url('hero_circle.webp');
+    background-size: 60vh;
+    /* Make the circle a central focus but not overwhelming */
+    background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     position: relative;
+    overflow: hidden;
+}
+
+.hero-quote {
+    font-family: 'Cinzel', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-teal);
+    font-weight: 700;
 }
 
 /* The Fade-to-Black Gradient Overlay */
@@ -190,11 +192,11 @@ a {
 
 .hero-content h2 {
     /* Fluid top margin to avoid overlap on short screens */
-    margin-top: clamp(20vh, 35vh, 43vh); 
+    margin-top: clamp(20vh, 35vh, 43vh);
     font-size: clamp(1.2rem, 4vmin, 2.2rem);
-    color: var(--text-light); 
+    color: var(--text-light);
     margin-bottom: clamp(1rem, 3vh, 2.5rem);
-    text-shadow: 2px 2px 10px rgba(0,0,0,1);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
 }
 
 .hero-content p {
@@ -211,7 +213,8 @@ a {
     /* Fluid navbar height */
     padding: clamp(10px, 1.5vh, 20px) 0;
     z-index: 1000;
-    background: rgba(10, 15, 36, 0.85); /* Slightly darker for better contrast */
+    background: rgba(10, 15, 36, 0.85);
+    /* Slightly darker for better contrast */
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(212, 175, 55, 0.3);
 }
@@ -223,12 +226,15 @@ a {
 }
 
 .nav-links a {
-    color: var(--text-light);
+    color: var(--clr-text-main);
     /* Fluid link spacing */
     margin-left: clamp(10px, 2.5vw, 30px);
-    font-family: 'Cinzel', serif; /* Back to Old Font */
-    font-size: clamp(0.7rem, 1.2vw, 1rem); /* Fluid nav links */
-    font-weight: 700; /* Bolder */
+    font-family: 'Cinzel', serif;
+    /* Back to Old Font */
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
+    /* Fluid nav links */
+    font-weight: 700;
+    /* Bolder */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -241,7 +247,8 @@ a {
 .legacy-section {
     /* Fluid section padding */
     padding: clamp(60px, 8vh, 120px) 0;
-    background-color: #000000; /* Pure black to match hero fade */
+    background-color: #000000;
+    /* Pure black to match hero fade */
     text-align: center;
 }
 
@@ -254,7 +261,7 @@ a {
     max-width: 800px;
     margin: 0 auto;
     font-size: clamp(0.95rem, 1.5vw, 1.15rem);
-    color: var(--text-muted);
+    color: var(--clr-text-dim);
 }
 
 /* Testimonials / The Experience */
@@ -273,21 +280,21 @@ a {
 
 .testimonial-card {
     padding: clamp(20px, 3vw, 30px);
-    border-left: 2px solid var(--accent-teal);
+    border-left: 2px solid var(--clr-brand-teal);
     background: rgba(255, 255, 255, 0.02);
     text-align: left;
 }
 
 .testimonial-text {
     font-style: italic;
-    color: var(--text-light);
+    color: var(--clr-text-main);
     margin-bottom: 20px;
     font-size: clamp(0.9rem, 1vw + 0.5rem, 1.1rem);
 }
 
 .testimonial-author {
     font-family: 'Cormorant Garamond', serif;
-    color: var(--accent-teal);
+    color: var(--clr-brand-teal);
     font-size: 0.9rem;
     text-transform: uppercase;
     font-weight: 700;
@@ -329,7 +336,8 @@ a {
 .payment-row {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center icons */
+    justify-content: center;
+    /* Center icons */
     gap: 20px;
 }
 
@@ -360,13 +368,16 @@ a {
 
 .services-carousel {
     display: flex;
-    gap: clamp(10px, 2vw, 20px); /* Fluid gap */
+    gap: clamp(10px, 2vw, 20px);
+    /* Fluid gap */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 40px 20px; /* Added vertical padding for scale effect */
+    padding: 40px 20px;
+    /* Added vertical padding for scale effect */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    max-width: 1400px; /* Wider framing */
+    max-width: 1400px;
+    /* Wider framing */
     margin: 0 auto;
 }
 
@@ -379,23 +390,26 @@ a {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
-    padding: clamp(20px, 4vw, 40px); /* Fluid internal padding */
+    padding: clamp(20px, 4vw, 40px);
+    /* Fluid internal padding */
     border-radius: 12px;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.4s ease, border-color 0.4s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    
+
     /* Carousel specific sizing: Fluid width */
-    flex: 0 0 clamp(280px, 80vw, 360px); 
+    flex: 0 0 clamp(280px, 80vw, 360px);
     scroll-snap-align: center;
 }
 
 .service-card:hover {
-    transform: scale(1.08); /* Become larger */
+    transform: scale(1.08);
+    /* Become larger */
     background: rgba(255, 255, 255, 0.12);
-    z-index: 10; /* Pop above others */
+    z-index: 10;
+    /* Pop above others */
     border-color: var(--accent-teal);
 }
 
@@ -434,14 +448,16 @@ a {
 
 .social-links {
     margin-top: 2rem;
-    text-align: center; /* Explicitly center */
+    text-align: center;
+    /* Explicitly center */
 }
 
 .contact-info {
     font-size: clamp(1rem, 4vw, 1.5rem);
     margin-bottom: 1.5rem;
     font-family: 'Cinzel', serif;
-    text-align: center; /* Explicitly center */
+    text-align: center;
+    /* Explicitly center */
     color: var(--text-light);
 }
 
@@ -449,38 +465,43 @@ a {
 .footer {
     background-color: var(--bg-secondary);
     padding: 60px 0;
-    text-align: center; /* This should center inline content */
+    text-align: center;
+    /* This should center inline content */
     border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 /* Responsive */
 @media (max-height: 750px) {
     .hero-section {
-        padding-top: 80px; /* Reduce top padding */
+        padding-top: 80px;
+        /* Reduce top padding */
     }
-    
+
     h1 {
         margin-top: 10px;
     }
-    
+
     .hero-content h2 {
-        margin-top: 25vh; /* Less push-down on short screens */
+        margin-top: 25vh;
+        /* Less push-down on short screens */
     }
-    
+
     .hero-content p {
         margin-bottom: 1rem;
     }
 }
 
 @media (max-width: 1024px) {
+
     /* Tablet/Smaller Laptop Adjustments */
     .hero-content h1 {
-        margin-top: 10px; /* Remove extra gap */
+        margin-top: 10px;
+        /* Remove extra gap */
     }
-    
+
     .hero-content h2 {
         /* This pushes the "30 Years" and buttons down below the face */
-        margin-top: 35vh; 
+        margin-top: 35vh;
     }
 
     .service-card {
@@ -489,6 +510,7 @@ a {
 }
 
 @media (max-width: 768px) {
+
     /* 1. MAKE NAVBAR SMALLER */
     .navbar {
         padding: 10px 0;
@@ -501,16 +523,18 @@ a {
     /* 2. FIX THE HEAD CUTOFF */
     .hero-section {
         background-position: top center !important;
-        background-attachment: scroll !important; /* Fixes mobile zoom issue */
-        padding-top: 80px; /* Moves content high up on mobile */
+        background-attachment: scroll !important;
+        /* Fixes mobile zoom issue */
+        padding-top: 80px;
+        /* Moves content high up on mobile */
         align-items: flex-start;
     }
 
     /* 3. SHOW TITLE ON MOBILE */
     .hero-content h1 {
-        display: block; 
+        display: block;
     }
-    
+
     /* 4. MOVE THE SUBTITLE DOWN */
     .hero-content h2 {
         margin-top: 25vh;
@@ -518,13 +542,16 @@ a {
 
     /* 5. CAROUSEL ONE BOX AT A TIME */
     .service-card {
-        flex: 0 0 75vw; /* Reduced from 85vw */
+        flex: 0 0 75vw;
+        /* Reduced from 85vw */
         margin: 0 10px;
-        padding: 20px; /* Reduced internal padding significantly for mobile */
+        padding: 20px;
+        /* Reduced internal padding significantly for mobile */
     }
 
     .service-card h3 {
-        font-size: 1.2rem; /* Slightly smaller heading for mobile */
+        font-size: 1.2rem;
+        /* Slightly smaller heading for mobile */
     }
 
     .service-card ul {
@@ -553,11 +580,68 @@ a {
         margin-top: 0.5rem;
         padding-top: 0.5rem;
     }
-    
+
     .services-carousel {
-        padding-left: 12.5vw; /* Centering adjustment for 75vw cards */
+        padding-left: 12.5vw;
+        /* Centering adjustment for 75vw cards */
         padding-right: 12.5vw;
     }
 }
-.social-links { text-align: center; margin-top: 2rem; }
-.contact-info { text-align: center; font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Cinzel', serif; color: var(--text-light); }
+
+.social-links {
+    text-align: center;
+    margin-top: var(--space-8);
+}
+
+.contact-info {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: var(--space-6);
+    font-family: 'Cinzel', serif;
+    color: var(--clr-text-main);
+}
+
+/* New Utility Classes for Cleanup */
+.section-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.9rem, 1vw, 1.1rem);
+    color: var(--accent-teal);
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.text-gold {
+    color: var(--accent-teal);
+    font-weight: 700;
+}
+
+.footer-copyright {
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    text-align: center;
+}
+
+/* Fix for H1 in Hero */
+.hero-content h1 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    text-shadow: 0 0 20px rgba(74, 51, 126, 0.5);
+}
+
+.footer-logo-text {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    color: var(--accent-teal);
+}
+
+.card-subtitle {
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: var(--text-muted);
+}
