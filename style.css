@@ -189,6 +189,50 @@ body {
     margin-bottom: var(--space-8);
 }
 
+/* New Hero Section Styles */
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--accent);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+}
+
+.hero-phone-huge {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.8rem, 6vw, 3.5rem);
+    color: var(--clr-brand-purple-light);
+    text-decoration: none;
+    display: block;
+    margin-bottom: var(--space-6);
+    letter-spacing: 2px;
+    transition: var(--transition-fast);
+}
+
+.hero-phone-huge:hover {
+    color: var(--accent);
+    transform: scale(1.02);
+}
+
+.hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--clr-text-main);
+    margin-bottom: var(--space-8);
+}
+
+.hero-details p {
+    font-family: 'Lato', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: var(--clr-text-dim);
+    margin-bottom: var(--space-4);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Buttons */
 .btn-teal {
     display: inline-block;
