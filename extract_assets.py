@@ -25,14 +25,15 @@ def extract_assets(input_path):
         astrology_img.save("business_card_astrology.png")
         print(f"Saved business_card_astrology.png: {astrology_img.size}")
 
-        # 4. Hero Circle (ONLY the inner graphic - No text)
+        # 4. Hero Circle (ONLY the inner graphic - ABSOLUTELY NO TEXT)
         # Based on logo_banner dimensions (1640, 1375)
-        # Centering on hands and light, excluding the 'Crystal Shadows' text block
-        circle_box = (670, 310, 1370, 1010) 
+        # Center is roughly (820, 687). 
+        # Using a tighter 600x600 box to exclude outer text rings
+        circle_box = (520, 387, 1120, 987) 
         circle_img = img.crop(circle_box)
-        # Convert to WebP immediately for hero use
-        circle_img.save("hero_circle.webp", "WEBP", quality=95)
-        print(f"Saved clean hero_circle.webp: {circle_img.size}")
+        # Convert to WebP for maximum quality/performance
+        circle_img.save("hero_circle.webp", "WEBP", quality=98)
+        print(f"Saved ultra-clean hero_circle.webp: {circle_img.size}")
 
 if __name__ == "__main__":
     scan_path = r"c:\Users\transmacsual\projects\crystal\Scan_20260317 (2).png"
