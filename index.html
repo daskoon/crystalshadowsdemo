@@ -17,6 +17,7 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -56,16 +57,11 @@
     <header class="hero-section">
         <div class="hero-content container">
             <img src="circlelogo transparent.png" alt="Crystal Shadows Logo" class="hero-logo-img">
-            <div class="hero-text-content">
+            <div class="hero-details">
                 <h1 class="hero-title">Crystal Shadows</h1>
-                <a href="tel:6105445411" class="hero-phone-huge">610.544.5411</a>
-                <h2 class="hero-subtitle">30 Years of Insight & Illumination</h2>
-                <p class="hero-quote">"Never fear shadows, they mean there is light nearby."</p>
-                <p>Unveil your path with clarity and grace. A legacy of truth serving individuals, groups, and renowned
-                    establishments for over three decades.</p>
-                <div style="margin-top: var(--space-8);">
-                    <a href="tel:6105445411" class="btn-teal">Call for Consultation</a>
-                </div>
+                <div class="hero-subtitle">Awaken Your Spirit</div>
+                <div class="hero-phone-huge">610.544.5411</div>
+                <p class="hero-quote delay-07s">30 Years of Insight & Illumination</p>
             </div>
         </div>
     </header>
@@ -91,23 +87,110 @@
             </div>
         </section>
 
-        <section id="about" class="container" style="padding: var(--space-16) 0; text-align: center;">
-            <h2 class="section-title">The Legacy</h2>
-            <p style="max-width: 800px; margin: 0 auto; color: var(--clr-text-dim);">
-                For 30 years, Crystal Shadows has been a beacon of light in the intuitive arts. 
-                Our mission is to provide authentic, compassionate guidance that empowers you to 
-                navigate life's complexities with confidence and peace.
-            </p>
+        <!-- Legacy Section -->
+        <section id="legacy" class="legacy-section services-section">
+            <div class="container">
+                <h2 class="section-title">The Legacy</h2>
+                <div class="legacy-copy">
+                    <p>Since 1996, Crystal has served a diverse clientele ranging from television personalities and professional sports teams to charities, event planners, and country clubs.</p>
+                    <p class="mt-4">Celebrating a <strong>30th Anniversary</strong>, this is a practice built not merely on prediction, but on an enduring trust that has weathered the turn of the millennium. Step into a lineage of wisdom, refined over three decades.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offerings Section -->
+        <section id="offerings" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Offerings</h2>
+                <p class="offerings-subtitle">Guided sessions for personal clarity and group enlightenment.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Private Consultation</h3>
+                        <p>Deep, personal guidance available In-Person or via Phone.</p>
+                        <ul>
+                            <li>• The Deep Dive (30 Min)</li>
+                            <li>• Focused Insight (15 Min)</li>
+                        </ul>
+                        <div class="price-badge">Starting at $30</div>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Groups & Gatherings</h3>
+                        <p>Shared wisdom for connected spirits. Large assemblies or intimate circles.</p>
+                        <ul>
+                            <li>• Intimate Groups: $30/person</li>
+                            <li>• 15+ Guests: $25/person</li>
+                        </ul>
+                        <div class="price-badge">Host reads for FREE</div>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Events & Corporate</h3>
+                        <p>Elevate your gala, country club, or function with a touch of the mystical.</p>
+                        <ul>
+                            <li>• Hourly Engagement: $100/hr</li>
+                            <li>• 2-Hour Minimum Setting</li>
+                        </ul>
+                        <div class="price-badge">Professional Tarot Master</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience (Testimonials) -->
+        <section id="experience" class="experience-section services-section">
+            <div class="container">
+                <h2 class="section-title">The Experience</h2>
+                <div class="services-grid">
+                    <div class="service-card experience-card">
+                        <div class="star-rating">★★★★★</div>
+                        <p class="testimonial-quote">"I’ve gone to Crystal every year for a couple years now... she never tells you what you want to hear, but what you need to hear!"</p>
+                        <cite class="testimonial-cite">— Jasmine J., Google Review</cite>
+                    </div>
+                    <div class="service-card experience-card">
+                        <div class="star-rating">★★★★★</div>
+                        <p class="testimonial-quote">"Crystal Shadows is remarkable!! Her readings are very accurate!! You will be amazed how everything she reads is past, present, and future!"</p>
+                        <cite class="testimonial-cite">— Michelle V., Google Review</cite>
+                    </div>
+                    <div class="service-card experience-card">
+                        <div class="star-rating">★★★★★</div>
+                        <p class="testimonial-quote">"One of the most accurate psychics I’ve ever been read by. Some things she saw in my cards... I was blown away 3 months later."</p>
+                        <cite class="testimonial-cite">— Terri G., Google Review</cite>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer id="contact">
-        <div class="container footer-content">
-            <a href="tel:6105445411" class="contact-phone">610.544.5411</a>
-            <p>Serving with integrity for 30 years.</p>
-            <div class="footer-social">
-                &copy; 2026 Crystal Shadows | All Rights Reserved
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container text-center">
+            <div class="footer-brand">Crystal Shadows</div>
+            
+            <div class="footer-contact">
+                <div class="footer-phone">610.544.5411</div>
+                <div>crystalshadows1212@gmail.com</div>
             </div>
+
+            <div class="footer-social-wrap">
+                <a href="https://www.facebook.com/crystalshadows/" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            </div>
+
+            <div class="footer-disclaimer">
+                All services provided by Crystal Shadows are for informational and entertainment purposes only. 
+                Readings are not a substitute for professional legal, medical, or financial advice. Must be 18+ to book.
+            </div>
+
+            <div class="footer-payment-note">
+                Payment accepted via PayPal & Venmo for phone sessions.
+            </div>
+
+            <p class="footer-copyright">
+                &copy; 1996–2026 CRYSTAL SHADOWS. ALL RIGHTS RESERVED.
+            </p>
         </div>
     </footer>
 </body>

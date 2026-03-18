@@ -1,9 +1,9 @@
 /* Global Resets & Typography */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Pinyon+Script&family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Yellowtail&display=swap');
 
 :root {
     /* Color Tokens - User Specified Branding */
-    --clr-bg-main: #0a0e1a;
+    --clr-bg-main: #0a0a0c;
     --clr-bg-darker: #000000;
     --clr-brand-purple: #643B9F; /* User Specified Purple */
     --clr-brand-purple-light: #855cc4;
@@ -11,12 +11,19 @@
     --clr-brand-teal-bright: #c4d9e0;
     --clr-text-main: #A5BDC4; /* User Specified Font Color */
     --clr-text-dim: #cbd8dd;
+    --clr-bg-card: rgba(30, 30, 35, 0.6);
     
     /* Semantic Tokens */
     --accent: var(--clr-brand-teal);
     --accent-hover: var(--clr-brand-teal-bright);
     --glass-fill: rgba(100, 59, 159, 0.15);
     --glass-stroke: rgba(165, 189, 196, 0.3);
+
+    /* Font Tokens */
+    --font-brand: 'Yellowtail', cursive;
+    --font-accent: 'Cinzel', serif;
+    --font-display: 'Cinzel Decorative', cursive;
+    --font-body: 'Inter', sans-serif;
 
     /* Spacing Tokens (8px system) */
     --space-1: 0.25rem; /* 4px */
@@ -89,23 +96,35 @@ body {
 
 .nav-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
     align-items: center;
 }
 
+.nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: auto;
+}
+
 .nav-logo-text {
-    font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
-    color: var(--accent);
-    letter-spacing: 2px;
+    font-family: var(--font-brand);
+    font-size: 2rem;
+    color: var(--clr-brand-teal);
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(165, 189, 196, 0.3);
     margin: 0;
     line-height: 1;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .nav-links {
     display: flex;
-    gap: var(--space-6);
+    gap: 2.5rem;
+    position: absolute;
+    right: 0;
 }
 
 .nav-links a {
@@ -168,6 +187,18 @@ body {
     animation: fadeInUp 1s ease-out 0.5s both;
 }
 
+.delay-07s {
+    animation-delay: 0.7s;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -192,13 +223,13 @@ body {
 
 /* New Hero Section Styles */
 .hero-title {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    color: var(--accent);
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin-bottom: var(--space-4);
-    line-height: 1.1;
+    font-family: var(--font-brand);
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    color: var(--clr-brand-teal);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    filter: drop-shadow(0 0 20px rgba(100, 59, 159, 0.5));
+    animation: fadeInScale 1.2s ease-out forwards;
 }
 
 .hero-phone-huge {
@@ -348,10 +379,128 @@ footer {
     border-width: 0;
 }
 
-/* Mobile Responsive */
+.legacy-section {
+    background: linear-gradient(to bottom, #0a0a0c, #0d0d12);
+}
+
+.legacy-copy {
+    max-width: 800px; 
+    margin: 0 auto; 
+    text-align: center; 
+    color: #d1d1d1; 
+    line-height: 1.8; 
+    font-size: 1.1rem;
+}
+
+.offerings-subtitle {
+    text-align: center; 
+    color: #A5BDC4; 
+    margin-bottom: 3rem; 
+    font-style: italic;
+}
+
+.service-card ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 1.5rem 0; 
+    color: #d1d1d1;
+}
+
+.service-card li {
+    margin-bottom: 0.8rem;
+}
+
+.experience-section {
+    background: rgba(100, 59, 159, 0.03);
+}
+
+.experience-card {
+    text-align: center;
+    width: 100%;
+}
+
+.star-rating {
+    color: #FFD700; 
+    margin-bottom: 1rem;
+}
+
+.testimonial-quote {
+    font-style: italic; 
+    font-size: 0.95rem;
+}
+
+.testimonial-cite {
+    display: block; 
+    margin-top: 1rem; 
+    color: #A5BDC4; 
+    font-weight: 600;
+}
+
+.main-footer {
+    padding: 4rem 1rem; 
+    background: #0a0a0c; 
+    border-top: 1px solid rgba(165, 189, 196, 0.1);
+}
+
+.footer-container {
+    text-align: center;
+}
+
+.footer-disclaimer {
+    max-width: 800px;
+    margin: 2rem auto;
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 1.6;
+    font-style: italic;
+    border-top: 1px solid rgba(165, 189, 196, 0.05);
+    padding-top: 1.5rem;
+}
+
+.footer-brand {
+    font-family: var(--font-brand); 
+    font-size: 2.5rem; 
+    color: var(--clr-brand-teal); 
+    margin-bottom: 1rem;
+}
+
+.footer-contact {
+    margin: 2rem 0; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.5rem; 
+    color: #A5BDC4;
+}
+
+.footer-phone {
+    font-size: 1.5rem; 
+    font-weight: 700;
+}
+
+.footer-social-wrap {
+    display: flex; 
+    justify-content: center; 
+    gap: 2rem; 
+    margin: 2rem 0;
+}
+
+.footer-payment-note {
+    margin-top: 2rem; 
+    font-size: 0.9rem; 
+    color: #666; 
+    font-style: italic;
+}
+
+.footer-copyright {
+    margin-top: 4rem; 
+    font-size: 0.8rem; 
+    color: #444; 
+    letter-spacing: 1px;
+}
+
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Add hamburger in future */
+        display: none; /* We'll focus on mobile-friendly hero for now */
     }
     
     .hero-section {
@@ -359,7 +508,7 @@ footer {
         background-attachment: scroll;
     }
     
-    .hero-content h1 {
+    .hero-title {
         font-size: 4rem;
     }
     
