@@ -4,307 +4,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crystal Shadows | 30 Years of Insight</title>
-
-    <!-- SEO & OpenGraph -->
+    <title>Crystal Shadows | 30 Years of Insight & Illumination</title>
     <meta name="description"
-        content="Unveil your path with clarity and grace. Crystal Shadows offers 30 years of trusted intuitive guidance, Tarot, and Astrology for individuals and events.">
+        content="Professional intuitive services by Crystal Shadows. 30 years of expert guidance for individuals, groups, and renowned establishments.">
+    <meta name="keywords" content="Psychic, Intuitive, Tarot, Astrology, Crystal Shadows, Spiritual Guidance">
+    
+    <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Crystal Shadows | 30 Years of Insight">
-    <meta property="og:description"
-        content="Never fear shadows, they mean there is light nearby. Book your session with a proven Tarot Master.">
-    <meta property="og:image" content="https://crystalshadowsastrology.com/logo_banner.webp">
-    <meta property="og:url" content="https://crystalshadowsastrology.com">
-    <meta property="og:type" content="website">
-
-    <!-- Favicon (Crystal Ball) -->
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔮</text></svg>">
+    <meta property="og:description" content="Professional intuitive services with 30 years of expert guidance.">
+    <meta property="og:image" content="hero_circle.webp">
+    <meta property="og:url" content="https://crystalshadowsdemo.vercel.app/">
+    <meta name="twitter:card" content="summary_large_image">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Calendly Badge Widget CSS is not needed for popup text/button, but we need the CSS for the popup itself which comes with the JS usually, but standard implementation suggests: -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Crystal Shadows",
+      "image": "https://crystalshadowsdemo.vercel.app/hero_circle.webp",
+      "telephone": "610-544-5411",
+      "url": "https://crystalshadowsdemo.vercel.app/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "610.544.5411",
+        "addressLocality": "Service Area",
+        "addressRegion": "PA"
+      },
+      "description": "Professional intuitive services with 30 years of expert guidance.",
+      "openingHours": "Mo-Su 09:00-21:00"
+    }
+    </script>
 </head>
 
 <body>
-
-    <!-- Sticky Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-logo">CRYSTAL SHADOWS</div>
-            <div class="nav-links">
-                <a href="#legacy">Legacy</a>
-                <a href="#offerings">Offerings</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
+        <div class="container nav-content">
+            <div class="nav-logo">
+                <h1>CRYSTAL SHADOWS</h1>
             </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero-section">
         <div class="hero-content container">
             <h1>Crystal Shadows</h1>
-            <a href="tel:6105445411" class="hero-phone">610.544.5411</a>
-            <h2><span class="big-number">30</span> Years of Insight & Illumination</h2>
+            <h2>30 Years of Insight & Illumination</h2>
             <p class="hero-quote">"Never fear shadows, they mean there is light nearby."</p>
             <p>Unveil your path with clarity and grace. A legacy of truth serving individuals, groups, and renowned
-                organizations since 1996.</p>
-            <a href="javascript:void(0);"
-                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/daskoon/30min'});return false;"
-                class="btn-teal">Book Your Session</a>
+                establishments for over three decades.</p>
+            <div style="margin-top: var(--space-8);">
+                <a href="tel:6105445411" class="btn-teal">Call for Consultation</a>
+            </div>
         </div>
     </header>
 
-    <!-- The Legacy Section -->
-    <section id="legacy" class="legacy-section">
-        <div class="container">
-            <h2>The Legacy</h2>
-            <div class="legacy-text">
-                <p>Since 1996, Crystal has served a diverse clientele ranging from television personalities and
-                    professional sports teams to charities, event planners, and country clubs.</p>
-                <br>
-                <p>Celebrating a <strong>30th Anniversary</strong>, this is a practice built not merely on prediction,
-                    but on an enduring trust that has weathered the turn of the millennium. Step into a lineage of
-                    wisdom, refined over three decades.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="offerings" class="services-section">
-        <div class="container">
-            <h2 class="section-title">Offerings & Rates</h2>
-
-            <div class="services-carousel" id="carousel">
-                <!-- Original Set -->
-                <div class="service-card">
-                    <div>
-                        <h3>Tarot & Intuition</h3>
-                        <p class="card-subtitle">Deep, personal guidance available In-Person or via Phone.</p>
-                        <ul>
-                            <li>
-                                <span class="service-item-title">The Deep Dive (30 Min)</span>
-                                <span class="service-price">$50.00</span>
-                                <span class="service-desc">A comprehensive Tarot & Astrology session to explore complex
-                                    questions.</span>
-                            </li>
-                            <li>
-                                <span class="service-item-title">Clarity Session (20 Min)</span>
-                                <span class="service-price">$40.00</span>
-                                <span class="service-desc">A focused look at your path with time for deeper
-                                    inquiry.</span>
-                            </li>
-                            <li>
-                                <span class="service-item-title">Focused Insight (15 Min)</span>
-                                <span class="service-price">$30.00</span>
-                                <span class="service-desc">Direct answers for immediate clarity using rapid-spread
-                                    Tarot.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="javascript:void(0);"
-                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/daskoon/30min'});return false;"
-                        class="btn-teal">Reserve Now</a>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <h3>Group Gatherings</h3>
-                        <p class="card-subtitle">Shared wisdom for connected spirits.</p>
-                        <ul>
-                            <li>
-                                <span class="service-item-title">Intimate Groups</span>
-                                <span class="service-price">$30.00 / person</span>
-                            </li>
-                            <li>
-                                <span class="service-item-title">Large Assemblies (15+)</span>
-                                <span class="service-price">$25.00 / person</span>
-                            </li>
-                        </ul>
-                        <div class="host-privilege">
-                            <p class="section-subtitle">The Host's Privilege</p>
-                            <p class="service-desc">Host a Party and get a free reading. (Hosts of gatherings with 5+
-                                guests receive a complimentary private session).</p>
-                        </div>
-                        <p class="fine-print">* Travel considerations may apply for locations beyond our immediate
-                            sanctuary.</p>
-                    </div>
-                    <a href="#contact" class="btn-teal">Book a Group</a>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <h3>Corporate & Private Events</h3>
-                        <p class="card-subtitle">Elevate your occasion with a touch of the mystical.</p>
-                        <ul>
-                            <li>
-                                <span class="service-item-title">Event Engagement</span>
-                                <span class="service-price">$125.00 / hour</span>
-                                <span class="service-desc">Professional Tarot Master engagement for galas, country
-                                    clubs, and functions.</span>
-                            </li>
-                        </ul>
-                        <p class="fine-print">Parties & Events: 2-hour minimum required. Travel fees may apply for
-                            distant locales.</p>
-                    </div>
-                    <a href="#contact" class="btn-teal">Inquire for Events</a>
-                </div>
-                <!-- Loop set for seamless scrolling -->
-                <div class="service-card">
-                    <div>
-                        <h3>Tarot & Intuition</h3>
-                        <p class="card-subtitle">Deep, personal guidance available In-Person or via Phone.</p>
-                        <ul>
-                            <li>
-                                <span class="service-item-title">The Deep Dive (30 Min)</span>
-                                <span class="service-price">$50.00</span>
-                                <span class="service-desc">A comprehensive Tarot & Astrology session to explore complex
-                                    questions.</span>
-                            </li>
-                            <li>
-                                <span class="service-item-title">Clarity Session (20 Min)</span>
-                                <span class="service-price">$40.00</span>
-                                <span class="service-desc">A focused look at your path with time for deeper
-                                    inquiry.</span>
-                            </li>
-                            <li>
-                                <span class="service-item-title">Focused Insight (15 Min)</span>
-                                <span class="service-price">$30.00</span>
-                                <span class="service-desc">Direct answers for immediate clarity using rapid-spread
-                                    Tarot.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="javascript:void(0);"
-                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/daskoon/30min'});return false;"
-                        class="btn-teal">Reserve Now</a>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <h3>Group Gatherings</h3>
-                        <p class="card-subtitle">Shared wisdom for connected spirits.</p>
-                        <ul>
-                            <li>
-                                <span class="service-item-title">Intimate Groups</span>
-                                <span class="service-price">$30.00 / person</span>
-                            </li>
-                            <li>
-                                <span class="service-item-title">Large Assemblies (15+)</span>
-                                <span class="service-price">$25.00 / person</span>
-                            </li>
-                        </ul>
-                        <div class="host-privilege">
-                            <p class="section-subtitle">The Host's Privilege</p>
-                            <p class="service-desc">Host a Party and get a free reading. (Hosts of gatherings with 5+
-                                guests receive a complimentary private session).</p>
-                        </div>
-                        <p class="fine-print">* Travel considerations may apply for locations beyond our immediate
-                            sanctuary.</p>
-                    </div>
-                    <a href="#contact" class="btn-teal">Book a Group</a>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <h3>Corporate & Private Events</h3>
-                        <p style="margin-bottom: 1rem; font-style: italic;">Elevate your occasion with a touch of the
-                            mystical.</p>
-                        <ul>
-                            <li>
-                                <span class="service-item-title">Event Engagement</span>
-                                <span class="service-price">$125.00 / hour</span>
-                                <span class="service-desc">Professional Tarot Master engagement for galas, country
-                                    clubs, and functions.</span>
-                            </li>
-                        </ul>
-                        <p class="fine-print">Parties & Events: 2-hour minimum required. Travel fees may apply for
-                            distant locales.</p>
-                    </div>
-                    <a href="#contact" class="btn-teal">Inquire for Events</a>
+    <main>
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Divine Services</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <h3>Private Consultations</h3>
+                        <p>Deeply personal sessions tailored to your unique journey. Gain clarity on love, career, and spiritual growth.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Group Events</h3>
+                        <p>Enchanting intuitive experiences for parties, corporate gatherings, and intimate circles.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Legacy Guidance</h3>
+                        <p>Long-term mentorship and insight for those seeking consistent spiritual alignment and truth.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section id="experience" class="testimonials-section">
-        <div class="container">
-            <h2 class="section-title">The Experience</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Crystal's accuracy is uncanny. She provided clarity during a major
-                        transition when I felt most lost. A true legacy of insight."</p>
-                    <p class="testimonial-author">— Private Client, Philadelphia</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"The highlight of our corporate gala. Professional, sophisticated, and
-                        incredibly gifted. Our guests are still talking about their readings."</p>
-                    <p class="testimonial-author">— Event Director, Major Corp</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"30 years of experience really shows. There is a weight of wisdom in her
-                        Tarot spreads that you just don't find elsewhere."</p>
-                    <p class="testimonial-author">— Published Author</p>
-                </div>
+        <section id="about" class="container" style="padding: var(--space-16) 0; text-align: center;">
+            <h2 class="section-title">The Legacy</h2>
+            <p style="max-width: 800px; margin: 0 auto; color: var(--clr-text-dim);">
+                For 30 years, Crystal Shadows has been a beacon of light in the intuitive arts. 
+                Our mission is to provide authentic, compassionate guidance that empowers you to 
+                navigate life's complexities with confidence and peace.
+            </p>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <a href="tel:6105445411" class="contact-phone">610.544.5411</a>
+            <p>Serving with integrity for 30 years.</p>
+            <div class="footer-social">
+                &copy; 2026 Crystal Shadows | All Rights Reserved
             </div>
-        </div>
-    </section>
-
-    <!-- Footer / Contact -->
-    <footer id="contact" class="footer">
-        <div class="container">
-            <h2 class="footer-logo-text">Contact</h2>
-            <div class="contact-info">
-                (610) 544-5411
-            </div>
-
-            <div class="payment-methods">
-                <p>Seamless digital exchanges</p>
-                <div class="payment-row">
-                    <span class="payment-item"><i class="fab fa-paypal"></i> PayPal</span>
-                    <span class="payment-item"><i class="fas fa-mobile-alt"></i> Venmo</span>
-                </div>
-            </div>
-
-            <div class="social-links">
-                <a href="https://www.facebook.com/crystalshadows/" target="_blank" rel="noopener">Facebook</a> • <a
-                    href="mailto:crystalshadows1212@gmail.com">Email</a>
-            </div>
-
-            <p class="footer-copyright">&copy; 1996–2026 Crystal Shadows. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Smooth Infinite Loop logic
-        const carousel = document.getElementById('carousel');
-
-        // Initial scroll to the start of the first set
-        window.addEventListener('load', () => {
-            carousel.scrollTo({ left: 1 });
-        });
-
-        carousel.addEventListener('scroll', () => {
-            const scrollWidth = carousel.scrollWidth;
-            const clientWidth = carousel.offsetWidth;
-            const scrollLeft = carousel.scrollLeft;
-
-            // Halfway point (since we have 2 identical sets)
-            const halfway = (scrollWidth / 2);
-
-            if (scrollLeft >= halfway) {
-                // Jump back to the start of the first set
-                carousel.scrollTo({ left: scrollLeft - halfway, behavior: 'instant' });
-            } else if (scrollLeft <= 0) {
-                // Jump to the start of the second set
-                carousel.scrollTo({ left: halfway, behavior: 'instant' });
-            }
-        });
-    </script>
-
 </body>
 
 </html>

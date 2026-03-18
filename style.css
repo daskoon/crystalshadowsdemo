@@ -2,21 +2,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Pinyon+Script&family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;500;700&display=swap');
 
 :root {
-    --bg-primary: #0a0e1a;
-    /* Very dark blue-black */
-    --bg-secondary: #000000;
-    --accent-purple: #4a337e;
-    /* Extracted from logo */
-    --accent-purple-light: #6a4ea1;
-    --accent-teal: #5b9bb8;
-    /* Extracted from logo circle */
-    --accent-teal-bright: #7dc2e3;
-    --text-light: #f8f9fa;
-    --text-muted: #dcd6f7;
-    --glass-bg: rgba(74, 51, 126, 0.1);
-    /* Purple tint glass */
-    --glass-border: rgba(91, 155, 184, 0.3);
-    /* Teal border */
+    /* Color Tokens - Agency Specialist Redesign */
+    --clr-bg-main: #0a0e1a;
+    --clr-bg-darker: #000000;
+    --clr-brand-purple: #4a347f; /* Refined Brand Purple */
+    --clr-brand-purple-light: #6a4ea1;
+    --clr-brand-teal: #5196b4; /* Refined Brand Blue */
+    --clr-brand-teal-bright: #7dc2e3;
+    --clr-text-main: #f8f9fa;
+    --clr-text-dim: #dcd6f7;
+    
+    /* Semantic Tokens */
+    --accent: var(--clr-brand-teal);
+    --accent-hover: var(--clr-brand-teal-bright);
+    --glass-fill: rgba(74, 52, 127, 0.15);
+    --glass-stroke: rgba(81, 150, 180, 0.3);
+
+    /* Spacing Tokens (8px system) */
+    --space-1: 0.25rem; /* 4px */
+    --space-2: 0.5rem;  /* 8px */
+    --space-4: 1rem;    /* 16px */
+    --space-6: 1.5rem;  /* 24px */
+    --space-8: 2rem;    /* 32px */
+    --space-12: 3rem;   /* 48px */
+    --space-16: 4rem;   /* 64px */
+
+    /* Animation Tokens */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -27,621 +40,245 @@
 
 html {
     scroll-behavior: smooth;
-    /* Fluid base: scales from 14px at 400px to 18px at 1200px */
     font-size: clamp(14px, 0.5vw + 12px, 18px);
 }
 
 body {
-    background-color: var(--bg-primary);
-    background-image: radial-gradient(circle at 50% 50%, #1e1435 0%, #0a0e1a 100%);
-    color: var(--text-light);
+    background-color: var(--clr-bg-main);
+    background-image: radial-gradient(circle at 50% 50%, #170d2b 0%, var(--clr-bg-main) 100%);
+    color: var(--clr-text-main);
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.1rem, 0.8rem + 1vw, 1.6rem);
-    font-weight: 500;
+    font-size: clamp(1.1rem, 0.8rem + 1vw, 1.3rem);
+    font-weight: 400;
     line-height: 1.7;
     overflow-x: hidden;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-}
-
-/* Updated h1 to Teal as per client request */
-h1 {
-    font-family: 'Pinyon Script', cursive;
-    color: var(--accent-teal);
-    font-weight: 700;
-    /* Fluid h1: Use vmin to respect both width and height */
-    font-size: clamp(3rem, 10vmin, 8rem);
-    letter-spacing: 2px;
-    margin-top: clamp(10px, 2vh, 40px);
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    line-height: 1.1;
-}
-
-/* MASSIVE Phone Number - Now Teal */
-.hero-phone {
-    display: block;
-    font-family: 'Cinzel', serif;
-    /* Fluid phone: vmin based */
-    font-size: clamp(1.5rem, 6vmin, 4rem);
-    font-weight: 700;
-    color: var(--accent-teal) !important;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    margin: 5px 0 0 0;
-    letter-spacing: 2px;
-    text-decoration: none;
-}
-
-/* Updated headers to Teal and better line-height */
-h2,
-h3,
-h4 {
-    font-family: 'Cinzel', serif;
-    color: var(--accent-teal);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.3;
-}
-
-.big-number {
-    font-size: 1.8em;
-    font-weight: 700;
-    vertical-align: middle;
-    line-height: 1;
-    display: inline-block;
-    transform: translateY(-5px);
-}
-
-.nav-logo {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(1rem, 2vw, 1.8rem);
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--accent-teal);
-}
-
-a {
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-/* Reusable Components - Renamed to Purple/Teal */
-.btn-teal {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-teal) 100%);
-    color: #fff !important;
-    padding: clamp(8px, 1.5vh, 12px) clamp(20px, 3vw, 30px);
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: 1px solid var(--accent-teal);
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(74, 51, 126, 0.4);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    font-size: clamp(0.8rem, 1vw + 0.1rem, 1rem);
-}
-
-.btn-teal:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(91, 155, 184, 0.6);
-    background: linear-gradient(135deg, var(--accent-purple-light) 0%, var(--accent-teal-bright) 100%);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    /* Fluid container padding: scales from 15px to 40px */
-    padding: 0 clamp(15px, 5vw, 40px);
+    padding: 0 var(--space-6);
 }
 
-/* Hero Section */
-.hero-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: clamp(70px, 10vh, 140px);
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(to bottom,
-            rgba(10, 14, 26, 0.6) 0%,
-            rgba(10, 14, 26, 0.2) 50%,
-            rgba(10, 14, 26, 0.8) 100%),
-        url('hero_circle.webp');
-    background-size: 60vh;
-    /* Make the circle a central focus but not overwhelming */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-quote {
-    font-family: 'Cinzel', serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: var(--accent-teal);
-    font-weight: 700;
-}
-
-/* The Fade-to-Black Gradient Overlay */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    /* Fluid gradient height */
-    height: clamp(100px, 20vh, 300px);
-    background: linear-gradient(to bottom, transparent, #000000);
-    pointer-events: none;
-    z-index: 1;
-}
-
-/* Ensure content stays above the fade */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-}
-
-.hero-content h2 {
-    /* Fluid top margin to avoid overlap on short screens */
-    margin-top: clamp(20vh, 35vh, 43vh);
-    font-size: clamp(1.2rem, 4vmin, 2.2rem);
-    color: var(--text-light);
-    margin-bottom: clamp(1rem, 3vh, 2.5rem);
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
-}
-
-.hero-content p {
-    font-size: clamp(0.9rem, 2vmin, 1.2rem);
-    max-width: 700px;
-    margin: 0 auto clamp(1rem, 2vh, 1.5rem);
-}
-
-/* Sticky Navbar */
+/* Nav Bar */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    /* Fluid navbar height */
-    padding: clamp(10px, 1.5vh, 20px) 0;
-    z-index: 1000;
-    background: rgba(10, 15, 36, 0.85);
-    /* Slightly darker for better contrast */
+    background: rgba(10, 14, 26, 0.85);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 1px solid var(--glass-stroke);
+    padding: var(--space-4) 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition-base);
 }
 
-.navbar .container {
+.nav-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.nav-logo h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: 1;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--space-6);
 }
 
 .nav-links a {
     color: var(--clr-text-main);
-    /* Fluid link spacing */
-    margin-left: clamp(10px, 2.5vw, 30px);
-    font-family: 'Cinzel', serif;
-    /* Back to Old Font */
-    font-size: clamp(0.7rem, 1.2vw, 1rem);
-    /* Fluid nav links */
-    font-weight: 700;
-    /* Bolder */
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+    text-decoration: none;
 }
 
 .nav-links a:hover {
-    color: var(--accent-teal);
+    color: var(--accent);
 }
 
-/* Legacy Section */
-.legacy-section {
-    /* Fluid section padding */
-    padding: clamp(60px, 8vh, 120px) 0;
-    background-color: #000000;
-    /* Pure black to match hero fade */
-    text-align: center;
-}
-
-.legacy-section h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    margin-bottom: clamp(1rem, 3vh, 2rem);
-}
-
-.legacy-text {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: clamp(0.95rem, 1.5vw, 1.15rem);
-    color: var(--clr-text-dim);
-}
-
-/* Testimonials / The Experience */
-.testimonials-section {
-    padding: clamp(60px, 10vh, 100px) 0;
-    background-color: #000000;
-    text-align: center;
-}
-
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 40vw, 350px), 1fr));
-    gap: clamp(20px, 4vw, 40px);
-    margin-top: 50px;
-}
-
-.testimonial-card {
-    padding: clamp(20px, 3vw, 30px);
-    border-left: 2px solid var(--clr-brand-teal);
-    background: rgba(255, 255, 255, 0.02);
-    text-align: left;
-}
-
-.testimonial-text {
-    font-style: italic;
-    color: var(--clr-text-main);
-    margin-bottom: 20px;
-    font-size: clamp(0.9rem, 1vw + 0.5rem, 1.1rem);
-}
-
-.testimonial-author {
-    font-family: 'Cormorant Garamond', serif;
-    color: var(--clr-brand-teal);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-/* Host Privilege Callout */
-.host-privilege {
-    margin-top: 3rem;
-    padding: 20px;
-    border: 1px dashed var(--accent-teal);
-    border-radius: 8px;
-    background: rgba(212, 175, 55, 0.05);
-}
-
-.host-privilege h4 {
-    margin-bottom: 0.5rem;
-}
-
-.fine-print {
-    font-size: 0.75rem;
-    color: rgba(230, 230, 250, 0.5);
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
-    font-style: italic;
-    line-height: 1.4;
-}
-
-.payment-methods {
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.payment-row {
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Center icons */
-    gap: 20px;
+    position: relative;
+    padding: var(--space-16) 0;
+    background-image: url('hero_circle.webp');
+    background-size: 65vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.payment-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-light);
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 30%, var(--clr-bg-main) 95%);
+    pointer-events: none;
+    z-index: 1;
 }
 
-.payment-item i {
-    color: var(--accent-teal);
-    font-size: 1.2rem;
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    max-width: 850px;
 }
 
-/* Services Carousel (Replaces Grid) */
+.hero-content h1 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: clamp(4rem, 15vw, 8.5rem);
+    color: var(--clr-brand-teal);
+    text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(74, 52, 127, 0.4);
+    line-height: 0.9;
+    margin-bottom: var(--space-2);
+}
+
+.hero-content h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 4vw, 2.2rem);
+    color: var(--clr-text-main);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: var(--space-6);
+}
+
+.hero-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--clr-text-dim);
+    margin-bottom: var(--space-8);
+}
+
+/* Buttons */
+.btn-teal {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--clr-brand-purple) 0%, var(--clr-brand-teal) 100%);
+    color: #fff !important;
+    padding: var(--space-4) var(--space-12);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid var(--clr-brand-teal);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: 0 4px 15px rgba(74, 52, 127, 0.4);
+    text-decoration: none;
+}
+
+.btn-teal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(81, 150, 180, 0.4);
+    background: linear-gradient(135deg, var(--clr-brand-purple-light) 0%, var(--clr-brand-teal-bright) 100%);
+}
+
+/* Service Grid */
 .services-section {
-    padding: clamp(60px, 10vh, 100px) 0;
-    background-color: var(--bg-primary);
-    /* Removed overflow: hidden to prevent clipping of scaled cards */
+    padding: var(--space-16) 0;
+    background: var(--clr-bg-darker);
 }
 
 .section-title {
     text-align: center;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    margin-bottom: clamp(2rem, 5vh, 4rem);
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: var(--space-12);
 }
 
-.services-carousel {
-    display: flex;
-    gap: clamp(10px, 2vw, 20px);
-    /* Fluid gap */
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 40px 20px;
-    /* Added vertical padding for scale effect */
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    max-width: 1400px;
-    /* Wider framing */
-    margin: 0 auto;
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
 }
 
-.services-carousel::-webkit-scrollbar {
-    display: none;
-}
-
-/* Glassmorphism Card */
 .service-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
-    padding: clamp(20px, 4vw, 40px);
-    /* Fluid internal padding */
+    background: var(--glass-fill);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-stroke);
     border-radius: 12px;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.4s ease, border-color 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-
-    /* Carousel specific sizing: Fluid width */
-    flex: 0 0 clamp(280px, 80vw, 360px);
-    scroll-snap-align: center;
+    padding: var(--space-8);
+    transition: var(--transition-base);
 }
 
 .service-card:hover {
-    transform: scale(1.08);
-    /* Become larger */
-    background: rgba(255, 255, 255, 0.12);
-    z-index: 10;
-    /* Pop above others */
-    border-color: var(--accent-teal);
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    background: rgba(74, 52, 127, 0.2);
 }
 
-.service-card ul {
-    list-style: none;
-    margin-top: 1.5rem;
-}
-
-.service-card li {
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-    padding-bottom: 1rem;
-}
-
-.service-item-title {
-    display: block;
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    color: var(--accent-teal);
-    margin-bottom: 0.2rem;
-}
-
-.service-price {
-    display: block;
-    font-size: clamp(1.2rem, 3vw, 1.6rem);
-    font-weight: 700;
-    margin-bottom: 0.2rem;
-}
-
-.service-desc {
-    display: block;
-    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-    color: var(--text-muted);
-    font-weight: 400;
-    line-height: 1.4;
-}
-
-.social-links {
-    margin-top: 2rem;
-    text-align: center;
-    /* Explicitly center */
-}
-
-.contact-info {
-    font-size: clamp(1rem, 4vw, 1.5rem);
-    margin-bottom: 1.5rem;
+.service-card h3 {
     font-family: 'Cinzel', serif;
-    text-align: center;
-    /* Explicitly center */
-    color: var(--text-light);
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-4);
+}
+
+.service-card p {
+    font-size: 1.1rem;
+    color: var(--clr-text-dim);
 }
 
 /* Footer */
-.footer {
-    background-color: var(--bg-secondary);
-    padding: 60px 0;
+footer {
+    background: var(--clr-bg-darker);
+    border-top: 1px solid var(--glass-stroke);
+    padding: var(--space-12) 0;
     text-align: center;
-    /* This should center inline content */
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-/* Responsive */
-@media (max-height: 750px) {
-    .hero-section {
-        padding-top: 80px;
-        /* Reduce top padding */
-    }
-
-    h1 {
-        margin-top: 10px;
-    }
-
-    .hero-content h2 {
-        margin-top: 25vh;
-        /* Less push-down on short screens */
-    }
-
-    .hero-content p {
-        margin-bottom: 1rem;
-    }
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
-
-    /* Tablet/Smaller Laptop Adjustments */
-    .hero-content h1 {
-        margin-top: 10px;
-        /* Remove extra gap */
-    }
-
-    .hero-content h2 {
-        /* This pushes the "30 Years" and buttons down below the face */
-        margin-top: 35vh;
-    }
-
-    .service-card {
-        flex: 0 0 350px;
-    }
+.contact-phone {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: var(--space-4);
+    display: block;
 }
 
-@media (max-width: 768px) {
-
-    /* 1. MAKE NAVBAR SMALLER */
-    .navbar {
-        padding: 10px 0;
-    }
-
-    .nav-logo {
-        font-size: 1.1rem;
-    }
-
-    /* 2. FIX THE HEAD CUTOFF */
-    .hero-section {
-        background-position: top center !important;
-        background-attachment: scroll !important;
-        /* Fixes mobile zoom issue */
-        padding-top: 80px;
-        /* Moves content high up on mobile */
-        align-items: flex-start;
-    }
-
-    /* 3. SHOW TITLE ON MOBILE */
-    .hero-content h1 {
-        display: block;
-    }
-
-    /* 4. MOVE THE SUBTITLE DOWN */
-    .hero-content h2 {
-        margin-top: 25vh;
-    }
-
-    /* 5. CAROUSEL ONE BOX AT A TIME */
-    .service-card {
-        flex: 0 0 75vw;
-        /* Reduced from 85vw */
-        margin: 0 10px;
-        padding: 20px;
-        /* Reduced internal padding significantly for mobile */
-    }
-
-    .service-card h3 {
-        font-size: 1.2rem;
-        /* Slightly smaller heading for mobile */
-    }
-
-    .service-card ul {
-        margin-top: 0.5rem;
-    }
-
-    .service-card li {
-        margin-bottom: 0.5rem;
-        padding-bottom: 0.3rem;
-    }
-
-    .host-privilege {
-        margin-top: 1rem;
-        padding: 10px;
-    }
-
-    .host-privilege h4 {
-        font-size: 1rem;
-    }
-
-    .host-privilege p {
-        font-size: 0.8rem !important;
-    }
-
-    .fine-print {
-        margin-top: 0.5rem;
-        padding-top: 0.5rem;
-    }
-
-    .services-carousel {
-        padding-left: 12.5vw;
-        /* Centering adjustment for 75vw cards */
-        padding-right: 12.5vw;
-    }
-}
-
-.social-links {
-    text-align: center;
+.footer-social {
     margin-top: var(--space-8);
+    font-size: 0.9rem;
+    color: var(--clr-text-dim);
 }
 
-.contact-info {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-bottom: var(--space-6);
-    font-family: 'Cinzel', serif;
-    color: var(--clr-text-main);
-}
-
-/* New Utility Classes for Cleanup */
-.section-subtitle {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(0.9rem, 1vw, 1.1rem);
-    color: var(--accent-teal);
-    letter-spacing: 3px;
-    margin-bottom: 1rem;
-}
-
-.text-gold {
-    color: var(--accent-teal);
-    font-weight: 700;
-}
-
-.footer-copyright {
-    margin-top: 3rem;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    opacity: 0.6;
-    text-align: center;
-}
-
-/* Fix for H1 in Hero */
-.hero-content h1 {
-    font-family: 'Pinyon Script', cursive;
-    font-size: clamp(3.5rem, 8vw, 6rem);
-    margin-bottom: 0.5rem;
-    color: var(--text-light);
-    text-shadow: 0 0 20px rgba(74, 51, 126, 0.5);
-}
-
-.footer-logo-text {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-family: 'Cinzel', serif;
-    text-align: center;
-    color: var(--accent-teal);
-}
-
-.card-subtitle {
-    margin-bottom: 1rem;
-    font-style: italic;
-    color: var(--text-muted);
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Add hamburger in future */
+    }
+    
+    .hero-section {
+        background-size: 50vh;
+        background-attachment: scroll;
+    }
+    
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
